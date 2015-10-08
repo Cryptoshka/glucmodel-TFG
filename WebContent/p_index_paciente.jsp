@@ -1,6 +1,4 @@
-<?php
-    include_once('header.php');
-?>
+<%@include	file="header.jsp" %>
 
 <!-- $$ Título de la sección -->
 <div class="jumbotron" id="titulo_seccion">
@@ -141,7 +139,7 @@
                 <div class="panel-body">
                     <div class="list-group">
                         <a href="#" class="list-group-item">Ejercicio</a>
-                        <a href="p_peso_main.php" class="list-group-item">Peso
+                        <a href="p_peso_main.jsp" class="list-group-item">Peso
                             <form class="form-inline" role="form">
                                 <div class="form-group">
                                     <label class="sr-only" for="tf_peso">Peso</label>
@@ -150,8 +148,8 @@
                                 <button type="submit" class="btn btn-default">Actualizar</button>
                             </form>  
                         </a>
-                        <a href="p_glucemias_main.php" class="list-group-item">Glucemias</a>
-                        <a href="p_pruebas_medicas_main.php" class="list-group-item">Prueba médica</a>
+                        <a href="p_glucemias_main.jsp" class="list-group-item">Glucemias</a>
+                        <a href="p_pruebas_medicas_main.jsp" class="list-group-item">Prueba médica</a>
                         <a href="#" class="list-group-item">Dieta</a>
                         <a href="#" class="list-group-item">Insulina</a>
                         <a href="#" class="list-group-item">Favorito 1?</a>
@@ -170,6 +168,4 @@
 </div>
 <!-- ## Panel principal -->
 
-<?php
-    include_once('footer.php');
-?>
+<%@include	file="footer.jsp" %>
