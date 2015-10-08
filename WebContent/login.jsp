@@ -10,6 +10,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
+        	<p> Prueba </p>
             <h3>¡Bienvenido a glUCModel!</h3>
             <p>glUCModel ha sido desarrollado por el grupo de Arquitecturas Paralelas y Algoritmos Bioinspirados del departamento de Arquitectura de Computadores y Automática de la UCM.</p>
             <p>glUCModel es un sistema de ayuda para el control de la diabetes.</p>
