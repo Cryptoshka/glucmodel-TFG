@@ -1,6 +1,4 @@
-<?php
-    include_once('header.php');
-?>
+<%@include	file="header.jsp" %>
 
 <!-- $$ Título de la sección -->
 <div class="jumbotron" id="titulo_seccion">
@@ -341,6 +339,4 @@
 <!-- ## Container 4 -->
 <!-- ## Panel principal -->
 
-<?php
-    include_once('footer.php');
-?>
+<%@include	file="footer.jsp" %>

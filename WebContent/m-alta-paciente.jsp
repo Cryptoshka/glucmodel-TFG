@@ -1,6 +1,4 @@
-<?php
-    include_once('header.php');
-?>
+<%@include	file="header.jsp" %>
 
 <!-- $$ Título de la sección -->
 <div class="jumbotron" id="titulo_seccion">
@@ -94,7 +92,7 @@
                         <!--<button type="submit" class="btn btn-default">Submit</button>-->
                         <div class="row">
                             <div class="col-sm-6">
-                                <a href="m_index_medico.php" class="btn-ver-md">CANCELAR</a>
+                                <a href="m_index_medico.jsp" class="btn-ver-md">CANCELAR</a>
                             </div>
                             <div class="col-sm-6">
                                 <a href="#" class="btn-ver-md">ALTA</a>
@@ -115,6 +113,4 @@
 </div>
 <!-- ./ panel principal -->
 
-<?php
-    include_once('footer.php');
-?>
+<%@include	file="footer.jsp" %>

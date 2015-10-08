@@ -1,6 +1,4 @@
-<?php
-    include_once('header.php');
-?>
+<%@include	file="header.jsp" %>
 
 <!-- Section title -->
 <div class="jumbotron" id="titulo_seccion">
@@ -612,6 +610,4 @@
 </div>
 <!-- ## Container Crear Recomendación -->
 
-<?php
-    include_once('footer.php');
-?>
+<%@include	file="footer.jsp" %>
