@@ -1,6 +1,4 @@
-<?php
-    include_once('header.php');
-?>
+<%@include	file="header.jsp" %>
 
 <!-- $$ Título de la sección -->
 <div class="jumbotron" id="titulo_seccion">
@@ -10,10 +8,8 @@
 
 <!-- $$ Panel principal -->
 <div class="container">
-    <a href="m_ejemplo_manual.php">Ejemplo recomendación manual</a>    
+    <a href="m_ejemplo_manual.jsp">Ejemplo recomendación manual</a>    
 </div>
 <!-- ## Panel principal -->
 
-<?php
-    include_once('footer.php');
-?>
+<%@include	file="footer.jsp" %>

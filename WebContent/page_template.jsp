@@ -1,6 +1,4 @@
-<?php
-	include_once('header.php');
-?>
+<%@include	file="header.jsp" %>
 
 <!-- <div id="page-content" class="container"> -->
 	<div class="row">
@@ -8,6 +6,4 @@
 	</div>
 <!-- ./div -->
 	
-<?php
-	include_once('footer.php');
-?>
+<%@include	file="footer.jsp" %>
