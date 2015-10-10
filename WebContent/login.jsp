@@ -45,7 +45,7 @@
                 		<a href="p_index_paciente.jsp" class="list-group-item">Entrar (paciente)</a>
                 	</div>
                 	<div class="col-sm-4">
-                		<a href="m_index_medico.jsp" class="list-group-item">Entrar (médico)</a>
+                		<a href="/glucmodel/IndexMedico" class="list-group-item">Entrar (médico)</a>
                 	</div>
                 	<div class="col-sm-4">
                 		<button type="submit" class="btn btn-default">Entrar</button>
