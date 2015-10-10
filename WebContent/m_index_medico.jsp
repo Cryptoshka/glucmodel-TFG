@@ -3,6 +3,10 @@
 <!-- $$ Título de la sección -->
 <div class="jumbotron" id="titulo_seccion">
     <p>Ventana Principal</p>
+    <jsp:getProperty name="datoBD" property="cadena" />
+    <jsp:useBean id="datoBD" scope="request" class="beans.DatoBD" />
+    <% String s = datoBD.getCadena(); %>
+    <%= s %>
 </div>
 <!-- ## Título de la sección -->
 
@@ -110,68 +114,6 @@
                                 </div> 
                             </td>
                         </tr>
-
-                        <!--
-                        <tr class="rec-resumen">
-                            <td class="text-success">Forest Juniper</td>
-                            <td>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-success btn-xs">
-                                        <span class="glyphicon glyphicon-ok align-both"></span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-warning btn-xs">
-                                        <span class="glyphicon glyphicon-pencil align-both"></span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-danger btn-xs">
-                                        <span class="glyphicon glyphicon-remove align-both"></span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-info btn-xs">
-                                        <abbr title="Automatizar para este paciente"><span class="glyphicon glyphicon-repeat align-both"></span></abbr>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="rec-detalle hidden">
-                            <td class="text-warning">Descripción: Etiam pretium odio turpis, quis blandit justo vulputate at. Aliquam ut nisi ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper sapien ac ante scelerisque, eu imperdiet turpis dignissim. Fusce eu eleifend urna. Aliquam erat volutpat. Sed commodo.</td>
-                            <td>Acciones</td>
-                        </tr>
-
-                        <tr class="rec-resumen">
-                            <td class="text-warning">Azure Selby</td>
-                            <td>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-success btn-xs">
-                                        <span class="glyphicon glyphicon-ok align-both"></span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-warning btn-xs">
-                                        <span class="glyphicon glyphicon-pencil align-both"></span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-danger btn-xs">
-                                        <span class="glyphicon glyphicon-remove align-both"></span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-3">
-                                    <button type="button" class="btn btn-info btn-xs">
-                                        <abbr title="Automatizar para este paciente"><span class="glyphicon glyphicon-repeat align-both"></span></abbr>
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="rec-detalle hidden">
-                            <td class="text-danger">Descripción: Etiam pretium odio turpis, quis blandit justo vulputate at. Aliquam ut nisi ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper sapien ac ante scelerisque, eu imperdiet turpis dignissim. Fusce eu eleifend urna. Aliquam erat volutpat. Sed commodo.</td>
-                            <td>Acciones</td>
-                        </tr>-->
-
                     </table>
                     <!-- ./ table -->
                 </div>
@@ -220,18 +162,26 @@
                 <!-- Cuerpo G.Pacientes -->
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Paciente 1</a>
-                        <a href="#" class="list-group-item">Paciente 2</a>
-                        <a href="#" class="list-group-item">Paciente 3</a>
-                        <a href="#" class="list-group-item">Paciente 4
+                    	<jsp:getProperty name="nombresPacientes" property="nombres" />
+    					<jsp:useBean id="nombresPacientes" scope="request" class="beans.NombresPacientes" />
+    					<% String[] nombres = nombresPacientes.getNombres(); %>
+    					<% int[] ids = nombresPacientes.getIds(); %>
+						<% int i = 0;
+    					   for (String p : nombres) {
+    							out.println("<a href=\"InfoPaciente?id=" + ids[i] +"\" class=\"list-group-item\" idPaciente=" + ids[i] + ">" + p);
+    								out.println("<button type=\"submit\" class=\"btn btn-default btn-xs pull-right\">");
+    									out.println("<span class=\"glyphicon glyphicon-trash\"></span>");
+    								out.println("</button>");
+    							out.println("</a>");
+    							i++;
+							} 
+						%>
+
+                        <!--<a href="#" class="list-group-item">Paciente 4
                             <button type="submit" class="btn btn-default btn-xs pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
-                        </a>
-                        <a href="#" class="list-group-item">Paciente 5</a>
-                        <a href="#" class="list-group-item">Paciente 6</a>
-                        <a href="#" class="list-group-item">Paciente 7</a>
-                        <a href="#" class="list-group-item">Paciente 8</a>
+                        </a>-->
                     </div>
                 </div>
                 <!-- ./ Cuerpo G.Pacientes -->

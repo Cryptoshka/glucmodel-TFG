@@ -20,12 +20,13 @@
             <!-- ## Columna foto -->
             <!-- $$ Columna datos 1 -->
             <div class="col-sm-4">
+            	<jsp:useBean id="fichaPaciente" scope="request" class="beans.InfoBasicaPaciente" />
                 <ul>
-                    <li>Nombre: Paco Pérez</li>
-                    <li>Peso: 76 Kg</li>
-                    <li>Altura: 176 cm</li>
-                    <li>IMC: 23.4</li>
-                    <li>Tipo de diabetes: TIPO 1</li>
+                    <li>Nombre: <%= fichaPaciente.getNomApell() %></li>
+                    <li>Peso: <%= fichaPaciente.getPeso() %></li>
+                    <li>Altura: <%= fichaPaciente.getAltura() %></li>
+                    <li>IMC: <%= fichaPaciente.getImc() %></li>
+					<li>Tipo de diabetes: <%= fichaPaciente.getTipoDiabetes() %></li>
                 </ul>
             </div>
             <!-- ## Columna datos 1 -->
