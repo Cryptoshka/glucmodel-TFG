@@ -49,12 +49,89 @@ public class FuncionesBD {
 	public static void getInfoBasicaPaciente(String mail){
 		if (checkUserExists(mail)){
 			try {
-				BD.infoBasica(mail);
+				BD.infoBasica(BD.dameID());
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 	
+	/**
+	 *
+	 */
+	public static void getPesoPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.getPeso(BD.dameID());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *
+	 */
+	public static void getGlucemiasPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.getGlucemias(BD.dameID());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *
+	 */
+	public static void getInsulinaPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.getInsulina(BD.dameID());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *
+	 */
+	public static void getDietaPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.getDieta(BD.dameID());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *
+	 */
+	public static void getEjercicioPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.getEjercicio(BD.dameID());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	/**
+	 *
+	 */
+	public static void getPruebasPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.getPruebas(BD.dameID());
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
 }
