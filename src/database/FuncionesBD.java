@@ -42,4 +42,19 @@ public class FuncionesBD {
 		}
 		return true;
 	}
+	
+	/**
+	 *
+	 */
+	public static void getInfoBasicaPaciente(String mail){
+		if (checkUserExists(mail)){
+			try {
+				BD.infoBasica(mail);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
 }

@@ -93,4 +93,8 @@ public class DBGlucmodel {
 		
 		return true;
 	}
+
+	public void infoBasica(String mail) throws SQLException {
+		
+	}
 }
