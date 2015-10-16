@@ -45,17 +45,8 @@ public class FuncionesBD {
 		}
 		return true;
 	}
-	
-<<<<<<< HEAD
 	public static void getInfoBasicaPaciente(String mail){
 		if (checkUserExists(mail, null)){
-=======
-	/**
-	 *
-	 */
-	public static void getInfoBasicaPaciente(String mail){
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
 			try {
 				BD.infoBasica(BD.dameID());
 			} catch (SQLException e) {
@@ -68,11 +59,7 @@ public class FuncionesBD {
 	 *
 	 */
 	public static void getPesoPaciente(String mail){
-<<<<<<< HEAD
 		if (checkUserExists(mail, null)){
-=======
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
 			try {
 				BD.getPeso(BD.dameID());
 			} catch (SQLException e) {
@@ -85,11 +72,7 @@ public class FuncionesBD {
 	 *
 	 */
 	public static void getGlucemiasPaciente(String mail){
-<<<<<<< HEAD
 		if (checkUserExists(mail, null)){
-=======
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
 			try {
 				BD.getGlucemias(BD.dameID());
 			} catch (SQLException e) {
@@ -102,11 +85,9 @@ public class FuncionesBD {
 	 *
 	 */
 	public static void getInsulinaPaciente(String mail){
-<<<<<<< HEAD
+
 		if (checkUserExists(mail, null)){
-=======
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
+
 			try {
 				BD.getInsulina(BD.dameID());
 			} catch (SQLException e) {
@@ -119,11 +100,7 @@ public class FuncionesBD {
 	 *
 	 */
 	public static void getDietaPaciente(String mail){
-<<<<<<< HEAD
 		if (checkUserExists(mail, null)){
-=======
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
 			try {
 				BD.getDieta(BD.dameID());
 			} catch (SQLException e) {
@@ -136,11 +113,7 @@ public class FuncionesBD {
 	 *
 	 */
 	public static void getEjercicioPaciente(String mail){
-<<<<<<< HEAD
 		if (checkUserExists(mail, null)){
-=======
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
 			try {
 				BD.getEjercicio(BD.dameID());
 			} catch (SQLException e) {
@@ -153,11 +126,7 @@ public class FuncionesBD {
 	 *
 	 */
 	public static void getPruebasPaciente(String mail){
-<<<<<<< HEAD
 		if (checkUserExists(mail, null)){
-=======
-		if (checkUserExists(mail)){
->>>>>>> origin/anton
 			try {
 				BD.getPruebas(BD.dameID());
 			} catch (SQLException e) {
@@ -165,8 +134,6 @@ public class FuncionesBD {
 			}
 		}
 	}
-	
-<<<<<<< HEAD
 	 /* Devuelve la contraseña (hasheada) del usuario indicado
 	 */
 	public static String getUsrPwd(String usr_email) {
@@ -204,6 +171,4 @@ public class FuncionesBD {
 		}
 		return ret;
 	}
-=======
->>>>>>> origin/anton
 }
