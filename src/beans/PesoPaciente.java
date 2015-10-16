@@ -1,13 +1,13 @@
 package beans;
 
 public class PesoPaciente {
-	private String[] medPesos;
+	private Object[] medPesos;
 
-	public String[] getMedPesos() {
+	public Object[] getMedPesos() {
 		return medPesos;
 	}
 
-	public void setMedPesos(String[] medPesos) {
+	public void setMedPesos(Object[] medPesos) {
 		this.medPesos = medPesos;
 	}
 
