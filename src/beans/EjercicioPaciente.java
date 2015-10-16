@@ -1,17 +1,17 @@
 package beans;
 
 public class EjercicioPaciente {
-	private String[] medEjercicio;
+	private Object[] medEjercicio;
 
 	public EjercicioPaciente() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String[] getMedEjercicio() {
+	public Object[] getMedEjercicio() {
 		return medEjercicio;
 	}
 
-	public void setMedEjercicio(String[] medEjercicio) {
+	public void setMedEjercicio(Object[] medEjercicio) {
 		this.medEjercicio = medEjercicio;
 	}
 

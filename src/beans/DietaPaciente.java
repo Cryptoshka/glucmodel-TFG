@@ -1,17 +1,17 @@
 package beans;
 
 public class DietaPaciente {
-	private String[] medDieta;
+	private Object[] medDieta;
 
 	public DietaPaciente() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String[] getMedDieta() {
+	public Object[] getMedDieta() {
 		return medDieta;
 	}
 
-	public void setMedDieta(String[] medDieta) {
+	public void setMedDieta(Object[] medDieta) {
 		this.medDieta = medDieta;
 	}
 
