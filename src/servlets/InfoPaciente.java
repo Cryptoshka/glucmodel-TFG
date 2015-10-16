@@ -1,5 +1,4 @@
-package webapp;
-
+package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,19 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.InfoBasicaPaciente;
 import database.FuncionesBD;
+import database.InfoLogin;
 
 /**
- * Servlet implementation class ProcesaLogin
+ * Servlet implementation class InfoPaciente
  */
-@WebServlet("/ProcesaLogin")
-public class ProcesaLogin extends HttpServlet {
+@WebServlet("/InfoPaciente")
+public class InfoPaciente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProcesaLogin() {
+    public InfoPaciente() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,42 +36,38 @@ public class ProcesaLogin extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("Server at: " + request.getContextPath());
-        out.println("Se ha llamado al servlet que procesa el login");
-        
-        System.out.println("El parametro email es: " + request.getParameter("email"));
-        System.out.println("El parametro pwd es: " + request.getParameter("pwd"));
-        
-        int res = checkLogin(request.getParameter("email"), request.getParameter("pwd"));
-        if (res == 0) {
-            out.println("Login correcto para paciente");
-        } else if (res == 1) {
-            out.println("Login correcto para medico");
-        } else {
-            out.println("Login incorrecto");
-        }
+    	
+    	// 1. Conectar a la BD
+    	FuncionesBD.conectar();
+    	
+    	// 2. Obtener información básica de la ficha
+    	String s = request.getParameter("id");
+    	int id_paciente = Integer.parseInt(s);
+    	System.out.println("El servlet ha recibido el id_paciente=" + id_paciente);
+    	InfoBasicaPaciente ficha = FuncionesBD.dameInfoBasicaPaciente(id_paciente);
+    	request.setAttribute("fichaPaciente", ficha);
+    	System.out.println("Información de la ficha:");
+    	System.out.println("Nombre: " + ficha.getNomApell());
+    	System.out.println("Peso: " + ficha.getPeso());
+    	System.out.println("Altura: " + ficha.getAltura());
+    	// 3. Obtener pesos para la gráfica
+    	
+    	// 4. Obtener glucemias
+    	
+    	// 5. Obtener insulina
+    	
+    	// 6. Obtener ejercicio
+    	
+    	// 7. Obtener pruebas médicas
+    	
+    	// 8. Desconectar de la BD
+    	FuncionesBD.desconectar();
+    	
+    	// 9. Redirigiar al .JSP
+        request.getRequestDispatcher("m_ejemplo_manual.jsp").forward(request, response);
     }
     
-    int checkLogin(String usr, String pwd) {
-        
-        // Conectar a la BD
-        FuncionesBD.conectar();
-        
-        // Realizar Query con user y pwd
-        System.out.println("checkLogin llama con " + usr);
-        FuncionesBD.checkUserExists(usr);
-        
-        // Ver si es válida
-        
-        // Desconectar
-        FuncionesBD.desconectar();
-        
-        return -1;
-    }
-    
-    /**
-     * Handles the HTTP <code>GET</code> method.
+	/** Handles the HTTP <code>GET</code> method.
      * @param request servlet request
      * @param response servlet request
      * @throws ServletException if a servlet-specific error occurs

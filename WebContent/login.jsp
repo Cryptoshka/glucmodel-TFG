@@ -27,7 +27,7 @@
     <div class="row">
         <!-- login column -->
         <div class="col-md-4 col-md-offset-4">
-			<form role="form" action="/Glucmodel-Web-v1/ProcesaLogin">
+			<form role="form" action="/glucmodel/ProcesaLogin">
 			    <div class="form-group">
 			    	<label for="email">Email:</label>
 			    	<input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
@@ -42,10 +42,10 @@
 			    
 			    <div class="row">
                 	<div class="col-sm-4">
-                		<a href="p_index_paciente.php" class="list-group-item">Entrar (paciente)</a>
+                		<a href="p_index_paciente.jsp" class="list-group-item">Entrar (paciente)</a>
                 	</div>
                 	<div class="col-sm-4">
-                		<a href="m_index_medico.php" class="list-group-item">Entrar (médico)</a>
+                		<a href="/glucmodel/IndexMedico" class="list-group-item">Entrar (médico)</a>
                 	</div>
                 	<div class="col-sm-4">
                 		<button type="submit" class="btn btn-default">Entrar</button>
