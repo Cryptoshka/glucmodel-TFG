@@ -256,4 +256,36 @@ public class DBGlucmodel {
 	public int dameID() throws SQLException {
 		return cdr.getInt(0);
 	}
+// todas esas funciones tiene que estar relacionadas con idPaciente, no con el mail
+	public void infoBasica(int id) throws SQLException {
+		
+	}
+	
+	public void getPeso(int id) throws SQLException {
+		
+	}
+	
+	public void getGlucemias(int id) throws SQLException {
+		
+	}
+	
+	public void getInsulina(int id) throws SQLException {
+		
+	}
+	
+	public void getDieta(int id) throws SQLException {
+		
+	}
+	
+	public void getEjercicio(int id) throws SQLException {
+		
+	}
+	
+	public void getPruebas(int id) throws SQLException {
+		
+	}
+
+	public int dameID() throws SQLException {
+		return cdr.getInt(0);
+	}
 }
