@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.InfoBasicaPaciente;
+import beans.MedidaPeso;
 import database.FuncionesBD;
 import database.InfoLogin;
 
@@ -50,7 +52,9 @@ public class InfoPaciente extends HttpServlet {
     	System.out.println("Nombre: " + ficha.getNomApell());
     	System.out.println("Peso: " + ficha.getPeso());
     	System.out.println("Altura: " + ficha.getAltura());
+    	
     	// 3. Obtener pesos para la gráfica
+    	LinkedList<MedidaPeso> pesos = FuncionesBD.damePesos(id_paciente);
     	
     	// 4. Obtener glucemias
     	

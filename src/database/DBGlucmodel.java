@@ -3,8 +3,10 @@ package database;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.LinkedList;
 
 import beans.InfoBasicaPaciente;
+import beans.MedidaPeso;
 import beans.NombresPacientes;
 
 public class DBGlucmodel {
@@ -223,5 +225,25 @@ public class DBGlucmodel {
 		ret.setMedicacionActual(null);
 		
 		return ret;
+	}
+	
+	/**
+	 * Devuelve el histórico de las medidas de peso asociadas a un paciente.
+	 * @throws SQLException 
+	 */
+	public LinkedList<MedidaPeso> damePesos(int id_paciente) throws SQLException {
+		LinkedList<MedidaPeso> historico = new LinkedList<MedidaPeso>();
+		
+		String consulta = "SELECT PESO,DATE FROM PESOS WHERE IDUSER='" + id_paciente + "'";
+		cdr = sentenciaSQL.executeQuery(consulta);
+		
+		MedidaPeso aux = new MedidaPeso();
+		while(cdr.next()) {
+			aux.setPeso(cdr.getDouble("PESO"));
+			aux.setFecha(cdr.getDate("DATE"));
+			historico.add(aux);
+		}
+		
+		return historico;
 	}
 }
