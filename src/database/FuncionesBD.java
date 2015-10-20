@@ -1,8 +1,10 @@
 package database;
 
 import java.sql.SQLException;
+import java.util.LinkedList;
 
 import beans.InfoBasicaPaciente;
+import beans.MedidaPeso;
 import beans.NombresPacientes;
 
 public class FuncionesBD {
@@ -63,25 +65,35 @@ public class FuncionesBD {
 	 * Dado el ID de un doctor, devuelve nombre y apellidos de sus pacientes.
 	 */
 	public static NombresPacientes dameNombrePacientes(int id_doctor) {
-		NombresPacientes ret = null;
 		try {
-			ret = BD.dameNombrePacientes(id_doctor);
+			return BD.dameNombrePacientes(id_doctor);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ret;
+		return null;
 	}
 	
 	/**
 	 * Dado el ID de un paciente, devuelve su información básica para la ficha de presentación al médico.
 	 */
 	public static InfoBasicaPaciente dameInfoBasicaPaciente(int id_paciente) {
-		InfoBasicaPaciente ret = null;
 		try {
-			ret = BD.dameInfoBasicaPaciente(id_paciente);
+			return BD.dameInfoBasicaPaciente(id_paciente);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return ret;
+		return null;
+	}
+	
+	/**
+	 * Dado el ID de un paciente, devuelve las medidas de peso que tiene almacenadas.
+	 */
+	public static LinkedList<MedidaPeso> damePesos(int id_paciente) {
+		try {
+			return BD.damePesos(id_paciente);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
