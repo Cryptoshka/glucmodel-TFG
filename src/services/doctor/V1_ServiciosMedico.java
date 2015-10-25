@@ -7,40 +7,44 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import database.DBFunctions;
+
 /**
  * Clase que agrupa los servicios que puede requerir un usuario de tipo médico
  * que desee obtener o crear información relacionada con sus pacientes.
  * @author amiedes
  */
-public class V1_ServiciosPacientes {
+@Path("/v1/medico")
+public class V1_ServiciosMedico {
 
 	/**
-	 * Igual que el de arriba pero haciendo que parte del path sea el parámetro
-	 * Ej: http://localhost:8080/com.youtube.rest-ep5/api/v2/inventory/INTEL
+	 * Devuelve id, nombre y apellidos de los pacientes de un médico en concreto
+	 * en formato JSON.
+	 * Acceso: http://localhost:8080/glucmodel/api/v1/medico?id=123
+	 * @param id ID del médico.
+	 * @return String con los datos de los pacientes en formato JSON.
+	 * @throws Exception
 	 */
-	/*@Path("/{brand}")
+	@Path("/lista/{id_medico}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response returnBrand(
-			@PathParam("brand") String brand)
+			@PathParam("id_medico") Integer id)
 			throws Exception {
 		
-		String returnString = null;
-		JSONArray json = new JSONArray();
+		String ret = null;
 		
 		try {
 			
-			DatabaseSchema dao = new DatabaseSchema();
-			
-			json = dao.queryReturnBrandParts(brand);
-			
-			returnString = json.toString();
+			DBFunctions dao = new DBFunctions();
+			ret = dao.queryReturnPatientList(id);
+
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
 			return Response.status(500).entity("Server was not able to process your request").build();
 		}
 		
-		return Response.ok(returnString).build();
-	}*/
+		return Response.ok(ret).build();
+	}
 }

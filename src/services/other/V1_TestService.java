@@ -7,8 +7,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import database.DBFunctions;
 
-@Path("test")
-public class TestService {
+@Path("/v1/test")
+public class V1_TestService {
 
 	/**
 	 * Método para probar si Jersey redirecciona correctamente las peticiones
