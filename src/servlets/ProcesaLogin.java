@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import database.FuncionesBD;
 import database.InfoLogin;
-import security.MD5;
+import util.security.MD5;
 
 /**
  * Servlet implementation class ProcesaLogin
