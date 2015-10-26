@@ -28,7 +28,7 @@ public class V1_ServiciosMedico {
 	@Path("/lista/{id_medico}")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response returnBrand(
+	public Response returnBrandGET(
 			@PathParam("id_medico") Integer id)
 			throws Exception {
 		
@@ -47,4 +47,5 @@ public class V1_ServiciosMedico {
 		
 		return Response.ok(ret).build();
 	}
+   
 }

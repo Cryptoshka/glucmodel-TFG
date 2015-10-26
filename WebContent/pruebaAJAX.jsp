@@ -159,36 +159,38 @@
                 <!-- Cuerpo G.Pacientes -->
                 <div class="panel-body">
                     <div class="list-group" id="aqui">
+                    
+                    <script>
+                    	var url = "http://localhost:8080/glucmodel/api/v1/medico/lista/39";
+                    	var datos = { id_medico: 39};
+                    	$.getJSON(url, datos, procesaLista).error(funcionError);
                     	
-                    	<script>
-                    		var url = "http://localhost:8080/glucmodel/api/v1/medico/lista/39";
-	                    	var datos = { id_medico: 39};
-	                    	$.getJSON(url, datos, procesaLista).error(funcionError);
+                    	function procesaLista(data) {
+
+                    		var newHTML = "";
+                    		$.each(data, function(nada, elem) {
+                    			newHTML += "<a href='#' class='list-group-item'>" 
+                    					+ elem.id + " - " + elem.name + " " + elem.surname1 + " " + elem.surname2
+                    					+ "<button type='submit' class='btn btn-default btn-xs pull-right'>"
+                                        + "<span class='glyphicon glyphicon-trash'></span>"
+                                        + "</button>";
+                    		});
+                    		
+                    		$("#aqui").append(newHTML);
+                    	}
                     	
-                    		function procesaLista(data) {
-	                    		var newHTML = "";
-	                    		$.each(data, function(nada, elem) {
-	                    			newHTML += "<a href='#' class='list-group-item'>" 
-	                    					+ elem.id + " - " + elem.name + " " + elem.surname1 + " " + elem.surname2
-	                    					+ "<button type='submit' class='btn btn-default btn-xs pull-right'>"
-	                                        + "<span class='glyphicon glyphicon-trash'></span>"
-	                                        + "</button>";
-	                    		});
-                    			$("#aqui").append(newHTML);
-                    		}
+                    	function funcionError() {
+                    		var errorMsg = "<p>Error obteniendo la lista de pacientes del servidor.</p>"
+                    		$("#aqui").append(errorMsg);
+                    	}
+                    </script>
                     	
-	                    	function funcionError() {
-	                    		var errorMsg = "<p>Error obteniendo la lista de pacientes del servidor.</p>"
-	                    		$("#aqui").append(errorMsg);
-	                    	}
-                    	</script>
 
                         <!--<a href="#" class="list-group-item">Paciente 4
                             <button type="submit" class="btn btn-default btn-xs pull-right">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                         </a>-->
-                        
                     </div>
                 </div>
                 <!-- ./ Cuerpo G.Pacientes -->
@@ -219,7 +221,7 @@
                 <div class="panel-body">
                     <div class="list-group">
                         <a href="m_recomendaciones_manuales.jsp" class="list-group-item">Crear recomendaciones de forma manual</a>
-                        <a href="m_revisar_automaticas.jsp" class="list-group-item">Revisar recomendaciones automáticas</a>
+                        <a href="m_revisar_automaticas.jsp" class="list-group-item">Revisar recomendaciones autom�ticas</a>
                         <a href="m_revisar_casos.jsp" class="list-group-item">Revisar los casos de seguimiento</a>
                     </div>
                 </div>
@@ -229,6 +231,68 @@
         <!-- ./ col S.Rec. -->
     </div>
     <!-- ./ row G.Pacientes y S.Rec. -->
+
+
+    <!-- row Moodle y Doc. Apoyo --> 
+    <div class="row">
+        <!-- col Moodle -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <!-- $$ Cabecera del Sistema de Educación -->
+                <div class="panel-heading">
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-default btn-xs">Entrar</button>
+                    </div>
+                    <h3 class="panel-title">Educación (Moodle)</h3>          
+                </div>
+                <!-- ## Cabecera del Sistema de Educación -->
+                <!-- $$ Cuerpo del Sistema de Educación -->
+                <div class="panel-body">
+                    <p> Últimas entradas del campus: </p>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Entrada 1</a>
+                        <a href="#" class="list-group-item">Entrada 2</a>
+                        <a href="#" class="list-group-item">Entrada 3</a>
+                    </div>
+                    <p> Tests recomendados: </p>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <button type="submit" class="btn btn-default btn-sm pull-right">Realizar</button>
+                            <p> Test diabetes Mellitus tipo 1 </p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <button type="submit" class="btn btn-default btn-xs pull-right">Realizar</button>
+                            <p> Test diabetes Mellitus tipo 2 </p>
+                        </a>
+                    </div>
+                </div>
+                <!-- ## Cuerpo del Sistema de Educación -->
+            </div>
+        </div>
+        <!-- ./ col Moodle --> 
+        <!-- col Doc.Apoyo -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <!-- $$ Cabecera Doc.Apoyo -->
+                <div class="panel-heading">
+                    <h3 class="panel-title">Dcoumentación de apoyo</h3>
+                </div>
+                <!-- ## Cabecera Doc.Apoyo -->
+                        
+                <!-- $$ Cuerpo Doc.Apoyo -->
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">Documento1.txt</a>
+                        <a href="#" class="list-group-item">Documento2.txt</a>
+                        <a href="#" class="list-group-item">Documento3.txt</a>
+                    </div>
+                </div>
+                <!-- ## Cuerpo Doc.Apoyo -->
+            </div>
+        </div>
+        <!-- ./ col Doc.Apoyo. -->   
+    </div>
+    <!-- ./ row Moodle y Doc.Apoyo. -->
 </div>
 <!-- ## Panel principal -->
 

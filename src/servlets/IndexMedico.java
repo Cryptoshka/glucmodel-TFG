@@ -51,15 +51,11 @@ public class IndexMedico extends HttpServlet {
     	//NombresPacientes n = new NombresPacientes();
     	//n.setNombres(aux);
     	
-    	// Bean de ejemplo
-    	DatoBD dato = new DatoBD();
-    	dato.setCadena("Este es el dato del bean");
     	
     	// Cerrar la conexión con la BD
     	FuncionesBD.desconectar();
     	
     	// Con los datos ya recopilados, mostrar el jsp.
-    	request.setAttribute("datoBD", dato);
     	request.setAttribute("nombresPacientes", n);
     	request.getRequestDispatcher("m_index_medico.jsp").forward(request, response);        
     }
