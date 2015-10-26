@@ -230,7 +230,8 @@ public class DBGlucmodel {
 	}
 	
 	public void getPeso(int id) throws SQLException {
-		
+		String consultaPeso = "SELECT PESO,DATE FROM PESOS WHERE IDUSER='" + id + "'";
+		cdr = sentenciaSQL.executeQuery(consultaPeso);
 	}
 	
 	public void getGlucemias(int id) throws SQLException {
@@ -246,7 +247,7 @@ public class DBGlucmodel {
 	}
 	
 	public void getEjercicio(int id) throws SQLException {
-		
+		String consulta = "SELECT ";
 	}
 	
 	public void getPruebas(int id) throws SQLException {
