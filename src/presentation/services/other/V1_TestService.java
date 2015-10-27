@@ -1,11 +1,12 @@
-package services.other;
+package presentation.services.other;
 
 import java.util.Iterator;
 import java.util.List;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import database.DBFunctions;
+
+import integration.database.DBFunctions;
 
 @Path("/v1/test")
 public class V1_TestService {

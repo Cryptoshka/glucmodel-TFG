@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.InfoBasicaPaciente;
 import beans.MedidaPeso;
-import database.FuncionesBD;
-import database.InfoLogin;
+import integration.database.FuncionesBD;
+import integration.database.InfoLogin;
 
 /**
  * Servlet implementation class InfoPaciente
