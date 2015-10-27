@@ -1,4 +1,4 @@
-package services.doctor;
+package presentation.services.doctor;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -7,7 +7,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import database.DBFunctions;
+import integration.database.DBFunctions;
 
 /**
  * Clase que agrupa los servicios que puede requerir un usuario de tipo médico

@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import database.FuncionesBD;
-import database.InfoLogin;
+import integration.database.FuncionesBD;
+import integration.database.InfoLogin;
 import util.security.MD5;
 
 /**

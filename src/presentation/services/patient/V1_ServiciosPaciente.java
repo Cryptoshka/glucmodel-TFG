@@ -1,4 +1,4 @@
-package services.patient;
+package presentation.services.patient;
 
 import javax.ws.rs.Path;
 

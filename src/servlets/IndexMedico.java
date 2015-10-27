@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.DatoBD;
 import beans.NombresPacientes;
-import database.FuncionesBD;
+import integration.database.FuncionesBD;
 
 /**
  * Servlet implementation class IndexMedico

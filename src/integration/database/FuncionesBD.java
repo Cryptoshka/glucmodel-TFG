@@ -1,4 +1,4 @@
-package database;
+package integration.database;
 
 import java.sql.SQLException;
 import java.util.LinkedList;
