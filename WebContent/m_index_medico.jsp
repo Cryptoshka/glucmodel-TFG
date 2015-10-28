@@ -1,6 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include	file="header.jsp" %>
 
-<!-- $$ T韙ulo de la secci髇 -->
+<!-- $$ T铆tulo de la secci贸n -->
 <div class="jumbotron" id="titulo_seccion">
     <p>Ventana Principal</p>
     <jsp:getProperty name="datoBD" property="cadena" />
@@ -8,7 +9,7 @@
     <% String s = datoBD.getCadena(); %>
     <%= s %>
 </div>
-<!-- ## T韙ulo de la secci髇 -->
+<!-- ## T铆tulo de la secci贸n -->
 
 <!-- $$ Panel principal -->
 <div class="container">
@@ -34,14 +35,14 @@
                         </tr>
 
                         <tr class="tr-paciente" id="paciente0">
-                            <!-- Nombre paciente y descripci髇 de la recomendacion-->
+                            <!-- Nombre paciente y descripci锟絥 de la recomendacion-->
                             <td class="td-recomendacion">
                                 <div class="text-danger" data-toggle="collapse" data-target=".div_ocultar">
                                     Martin Jermaine
                                 </div>
                             
                                 <div class="text-warning collapse in div_ocultar rec-detalle">
-                                    T韙ulo Recomendacion: No hay datos de ninguna medida de tensi髇 registrados en el 鷏timo mes. Por favor, introduzca datos de sus medidas de tensi髇 con mayor frecuencia.
+                                    T铆tulo Recomendacion: No hay datos de ninguna medida de tensi贸n registrados en el 煤ltimo mes. Por favor, introduzca datos de sus medidas de tensi贸n con mayor frecuencia.
                                 </div>
                             </td>
                             <!-- ./Nombre paciente y descripcion -->
@@ -83,7 +84,7 @@
                                     Nasim Mihkel
                                 </div>
                                 <div class="text-success collapse in div_ocultar2 rec-detalle">
-                                    No hay datos de ninguna medida de tensi髇 registrados en el 鷏timo mes. Por favor, introduzca datos de sus medidas de tensi髇 con mayor frecuencia.
+                                    No hay datos de ninguna medida de tensi贸n registrados en el 煤ltimo mes. Por favor, introduzca datos de sus medidas de tensi贸n con mayor frecuencia.
                                 </div>
                             </td>
                             <td class="td-fecha">
@@ -156,7 +157,7 @@
             <div class="panel panel-default">
                 <!-- Cabecera G.Pacientes -->
                 <div class="panel-heading">
-                    <h3 class="panel-title">Gesti髇 de pacientes</h3>          
+                    <h3 class="panel-title">Gesti锟絥 de pacientes</h3>          
                 </div>
                 <!-- ./ Cabecera G.Pacientes -->
                 <!-- Cuerpo G.Pacientes -->
@@ -212,7 +213,7 @@
                 <div class="panel-body">
                     <div class="list-group">
                         <a href="m_recomendaciones_manuales.jsp" class="list-group-item">Crear recomendaciones de forma manual</a>
-                        <a href="m_revisar_automaticas.jsp" class="list-group-item">Revisar recomendaciones autom醫icas</a>
+                        <a href="m_revisar_automaticas.jsp" class="list-group-item">Revisar recomendaciones autom锟絫icas</a>
                         <a href="m_revisar_casos.jsp" class="list-group-item">Revisar los casos de seguimiento</a>
                     </div>
                 </div>
@@ -229,17 +230,17 @@
         <!-- col Moodle -->
         <div class="col-sm-6">
             <div class="panel panel-default">
-                <!-- $$ Cabecera del Sistema de Educaci髇 -->
+                <!-- $$ Cabecera del Sistema de Educaci贸n -->
                 <div class="panel-heading">
                     <div class="pull-right">
                         <button type="button" class="btn btn-default btn-xs">Entrar</button>
                     </div>
-                    <h3 class="panel-title">Educaci髇 (Moodle)</h3>          
+                    <h3 class="panel-title">Educaci贸n (Moodle)</h3>          
                 </div>
-                <!-- ## Cabecera del Sistema de Educaci髇 -->
-                <!-- $$ Cuerpo del Sistema de Educaci髇 -->
+                <!-- ## Cabecera del Sistema de Educaci贸n -->
+                <!-- $$ Cuerpo del Sistema de Educaci贸n -->
                 <div class="panel-body">
-                    <p> 趌timas entradas del campus: </p>
+                    <p> 脷ltimas entradas del campus: </p>
                     <div class="list-group">
                         <a href="#" class="list-group-item">Entrada 1</a>
                         <a href="#" class="list-group-item">Entrada 2</a>
@@ -257,7 +258,7 @@
                         </a>
                     </div>
                 </div>
-                <!-- ## Cuerpo del Sistema de Educaci髇 -->
+                <!-- ## Cuerpo del Sistema de Educaci贸n -->
             </div>
         </div>
         <!-- ./ col Moodle --> 
@@ -266,7 +267,7 @@
             <div class="panel panel-default">
                 <!-- $$ Cabecera Doc.Apoyo -->
                 <div class="panel-heading">
-                    <h3 class="panel-title">Dcoumentaci髇 de apoyo</h3>
+                    <h3 class="panel-title">Dcoumentaci贸n de apoyo</h3>
                 </div>
                 <!-- ## Cabecera Doc.Apoyo -->
                         

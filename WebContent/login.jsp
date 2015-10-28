@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include	file="header.jsp" %>
 
 <!-- Section title -->
@@ -11,12 +12,12 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3 text-center">
         	<p> Prueba </p>
-            <h3>¡Bienvenido a glUCModel!</h3>
-            <p>glUCModel ha sido desarrollado por el grupo de Arquitecturas Paralelas y Algoritmos Bioinspirados del departamento de Arquitectura de Computadores y Automática de la UCM.</p>
+            <h3>Â¡Bienvenido a glUCModel!</h3>
+            <p>glUCModel ha sido desarrollado por el grupo de Arquitecturas Paralelas y Algoritmos Bioinspirados del departamento de Arquitectura de Computadores y AutomÃ¡tica de la UCM.</p>
             <p>glUCModel es un sistema de ayuda para el control de la diabetes.</p>
-            <p>Para utilizar el sistema debe disponer de nombre de usuario y contraseña.</p>
-            <p>Si usted es un profesional de la salud, por favor, rellene sus datos y solicite acceso mediante la pestaña de Nuevo usuario profesional.</p>
-            <p>Si es usted paciente, y aún no ha usado el sistema, por favor, hable con su médico para que le dé de alta en el sistema.</p>
+            <p>Para utilizar el sistema debe disponer de nombre de usuario y contraseÃ±a.</p>
+            <p>Si usted es un profesional de la salud, por favor, rellene sus datos y solicite acceso mediante la pestaÃ±a de Nuevo usuario profesional.</p>
+            <p>Si es usted paciente, y aÃºn no ha usado el sistema, por favor, hable con su mÃ©dico para que le de de alta en el sistema.</p>
         </div>
     </div>
 </div>
@@ -45,7 +46,7 @@
                 		<a href="p_index_paciente.jsp" class="list-group-item">Entrar (paciente)</a>
                 	</div>
                 	<div class="col-sm-4">
-                		<a href="/glucmodel/IndexMedico" class="list-group-item">Entrar (médico)</a>
+                		<a href="/glucmodel/IndexMedico" class="list-group-item">Entrar (mÃ©dico)</a>
                 	</div>
                 	<div class="col-sm-4">
                 		<button type="submit" class="btn btn-default">Entrar</button>
