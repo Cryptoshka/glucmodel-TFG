@@ -1,4 +1,4 @@
-package database;
+package integration.database;
 
 import java.sql.*;
 import java.text.DateFormat;
@@ -225,40 +225,6 @@ public class DBGlucmodel {
 		ret.setMedicacionActual(null);
 		
 		return ret;
-	}
-	
-// todas esas funciones tiene que estar relacionadas con idPaciente, no con el mail
-	public void infoBasica(int id) throws SQLException {
-		
-	}
-	
-	public void getPeso(int id) throws SQLException {
-		String consultaPeso = "SELECT PESO,DATE FROM PESOS WHERE IDUSER='" + id + "'";
-		cdr = sentenciaSQL.executeQuery(consultaPeso);
-	}
-	
-	public void getGlucemias(int id) throws SQLException {
-		
-	}
-	
-	public void getInsulina(int id) throws SQLException {
-		
-	}
-	
-	public void getDieta(int id) throws SQLException {
-		
-	}
-	
-	public void getEjercicio(int id) throws SQLException {
-		String consulta = "SELECT ";
-	}
-	
-	public void getPruebas(int id) throws SQLException {
-		
-	}
-
-	public int dameID() throws SQLException {
-		return cdr.getInt(0);
 	}
 	
 	/**

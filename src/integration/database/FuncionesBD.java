@@ -1,4 +1,4 @@
-package database;
+package integration.database;
 
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -47,96 +47,9 @@ public class FuncionesBD {
 		}
 		return true;
 	}
-	public static void getInfoBasicaPaciente(String mail){
-		if (checkUserExists(mail, null)){
-			try {
-				BD.infoBasica(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
 	
 	/**
-	 *
-	 */
-	public static void getPesoPaciente(String mail){
-		if (checkUserExists(mail, null)){
-			try {
-				BD.getPeso(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 *
-	 */
-	public static void getGlucemiasPaciente(String mail){
-		if (checkUserExists(mail, null)){
-			try {
-				BD.getGlucemias(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 *
-	 */
-	public static void getInsulinaPaciente(String mail){
-
-		if (checkUserExists(mail, null)){
-
-			try {
-				BD.getInsulina(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 *
-	 */
-	public static void getDietaPaciente(String mail){
-		if (checkUserExists(mail, null)){
-			try {
-				BD.getDieta(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 *
-	 */
-	public static void getEjercicioPaciente(String mail){
-		if (checkUserExists(mail, null)){
-			try {
-				BD.getEjercicio(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	/**
-	 *
-	 */
-	public static void getPruebasPaciente(String mail){
-		if (checkUserExists(mail, null)){
-			try {
-				BD.getPruebas(BD.dameID());
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	 /* Devuelve la contraseña (hasheada) del usuario indicado
+	 * Devuelve la contraseña (hasheada) del usuario indicado
 	 */
 	public static String getUsrPwd(String usr_email) {
 		String usr_hash = null;
