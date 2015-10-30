@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.DatoBD;
 import beans.NombresPacientes;
 import integration.database.FuncionesBD;
 
