@@ -1,4 +1,4 @@
-package beans;
+package business.pojos.beans_viejos;
 
 /**
  * Clase utilizada en el servicio que recopila la lista de pacientes para un

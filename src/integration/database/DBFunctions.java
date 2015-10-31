@@ -4,7 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import com.google.gson.Gson;
-import beans.InfoPacienteLista;
+
+import business.pojos.beans_viejos.InfoPacienteLista;
 
 public class DBFunctions extends Database {
 	

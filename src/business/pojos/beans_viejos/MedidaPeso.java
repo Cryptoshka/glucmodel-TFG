@@ -1,4 +1,4 @@
-package beans;
+package business.pojos.beans_viejos;
 
 import java.sql.Date;
 

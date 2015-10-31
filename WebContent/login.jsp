@@ -28,32 +28,55 @@
     <div class="row">
         <!-- login column -->
         <div class="col-md-4 col-md-offset-4">
-			<form role="form" action="/glucmodel/ProcesaLogin">
+        	
+			<form role="form" id="form_login">
+			
 			    <div class="form-group">
 			    	<label for="email">Email:</label>
-			    	<input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+			    	<input type="email" class="form-control" id="i_email" name="email" placeholder="Enter email">
 			    </div>
+			    
 			    <div class="form-group">
 			    	<label for="pwd">Password:</label>
-			    	<input type="password" class="form-control" id="pwd" name="pwd" placeholder="Enter password">
-			    </div>
-			    <div class="checkbox">
-			    	<label><input type="checkbox"> Remember me</label>
+			    	<input type="password" class="form-control" id="i_pwd" name="pwd" placeholder="Enter password">
 			    </div>
 			    
 			    <div class="row">
-                	<div class="col-sm-4">
-                		<a href="p_index_paciente.jsp" class="list-group-item">Entrar (paciente)</a>
-                	</div>
-                	<div class="col-sm-4">
-                		<a href="/glucmodel/IndexMedico" class="list-group-item">Entrar (médico)</a>
-                	</div>
-                	<div class="col-sm-4">
-                		<button type="submit" class="btn btn-default">Entrar</button>
-                		<!--<a href="ProcesaLogin" class="list-group-item">Entrar</a>-->
-                	</div>
+                	<button type="submit" class="btn btn-default">Entrar</button>
 	            </div>
             </form>
+            
+            <!-- Un script que recoja los datos del formulario, invoque al servicio con los parámetros de 
+            	 usr y pwd, y en función de la respuesta que devuelva, haga una cosa u otra. -->
+           	<script>
+	           	$('#form_login').on('submit', processLogin());
+            	 function processLogin() {
+				    console.log('processLogin()');
+				    console.log("AAh:" + $("#i_email").val());
+				    var email = $("#i_email").val();
+				    var password = $("#i_pwd").val();
+
+				    console.log("Info del form: " + email + " " + password  + "fin");
+				    return false;
+				    /*$.ajax({
+				        type: 'POST',
+				        url: "http://localhost:8080/glucmodel/api/login",
+						data: {
+							'email' : email,
+				    		'pwd' : password
+						},
+				        success: function(data, textStatus, jqXHR){
+				            alert('Llamada AJAX correcta');
+				            $('#id').val();
+				            $('#email').val();
+				        },
+				        error: function(jqXHR, textStatus, errorThrown){
+				            alert('addWine error: ' + textStatus);
+				        }
+				    });*/
+				}
+			</script>
+                    
         </div>
         <!-- ./ login column -->
     </div>
