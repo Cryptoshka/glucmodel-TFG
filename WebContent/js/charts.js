@@ -1,18 +1,161 @@
-/*function grafica_peso2() {
+function grafica_peso3() {
 
-    var opciones = {
-        chart: {
-            renderTo: 'container',
-            type: 'spline'
+	var opciones = {
+		title: {
+            text: 'Esto es el título',
+            x: -20 //center
         },
-        series: [{}]
-    };
-
-    $.getJSON('pesos_paciente.json', function(data) {
-        opciones.series[0].data = data;
-        var chart = new Highcharts.Chart(opciones);
+        subtitle: {
+            text: 'Esto es el subtítulo',
+            x: -20 //center
+        },
+        xAxis: {
+        	title: {
+                text: 'Título eje X'
+            },
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: 'Título eje Y'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Nombre serie',
+            data: [{}]
+        }]
+	};
+	
+	$.getJSON('json_examples/pesos_paciente2.json', function(data) {
+		var aux = data;
+		var datos = data;
+		
+		// Antes de procesarlos:
+		console.log("Antes de procesarlos:");
+		for (var i in datos) {
+			console.log(datos[i]);
+		}
+		
+		// Los proceso:
+		for (var i in datos) {
+			datos[i][0] = Date.parse(datos[i][0]);
+			//datos[i][0] = -datos[i][0];
+		}
+		
+		// Después de procesarlos:
+		console.log("Después de procesarlos:");
+		for (var i in datos) {
+			console.log(datos[i]);
+		}
+		
+		//var myDate = new Date('2013-06-08T06:00:00.000-07:00');
+        opciones.series[0].data = datos;
+        $('#grafica-glucemias').highcharts(opciones);
     });
-}*/
+	
+}
+
+function grafica3() {
+
+	var opciones = {
+		title: {
+            text: 'Esto es el título',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Esto es el subtítulo',
+            x: -20 //center
+        },
+        xAxis: {
+        	title: {
+                text: 'Título eje X'
+            },
+            type: 'datetime'
+        },
+        yAxis: {
+            title: {
+                text: 'Título eje Y'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Nombre serie doble',
+            data: [[1,200], [2,203], [3,223], [4,212], [5,230], [6,195], [7,198], [8,205], [9,183], [10,198], [11,200], [12,202]]
+        }]
+	};
+	
+	$('#grafica-3').highcharts(opciones);
+}
+
+function grafica4() {
+
+	var opciones = {
+		title: {
+            text: 'Esto es el título',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Esto es el subtítulo',
+            x: -20 //center
+        },
+        xAxis: {
+        	title: {
+                text: 'Título eje X'
+            },
+            categories: ['categ1', 'categ2', 'categ3', 'categ4', 'categ5', 'categ6',
+                'categ7', 'categ8', 'categ9', 'categ10', 'categ11', 'categ12']
+        },
+        yAxis: {
+            title: {
+                text: 'Título eje Y'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Nombre serie 1',
+            data: [200, 203, 223, 212, 230, 195, 198, 205, 183, 198, 200, 202]
+        },{
+            name: 'Nombre serie 2',
+            data: [210, 183, 243, 202, 210, 199, 158, 215, 193, 200, 210, 212]
+        }]
+	};
+	
+	$('#grafica-4').highcharts(opciones);
+}
+
+
+
 function grafica_peso2() {
 
     var opciones = {
@@ -20,6 +163,26 @@ function grafica_peso2() {
     		text: 'Peso',
     		x: -20 //center
     	},
+    	subtitle: {
+    		text: 'A lo largo del último año',
+    	},
+    	xAxis: {
+    		title: {
+    			text: 'Fecha'
+    		},
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+    	yAxis: {
+            title: {
+                text: 'Peso (Kg)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
     	tooltip: {
             valueSuffix: 'Kg'
         },
