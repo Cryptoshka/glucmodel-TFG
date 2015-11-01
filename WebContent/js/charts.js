@@ -1,32 +1,46 @@
-//$(function() {
+/*function grafica_peso2() {
 
-    /*function grafica_peso() {
-        $('#grafica-peso').highcharts({
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Fruit Consumption'
-            },
-            xAxis: {
-                categories: ['Apples', 'Bananas', 'Oranges']
-            },
-            yAxis: {
-                title: {
-                    text: 'Fruit eaten'
-                }
-            },
-            series: [{
-                name: 'Jane',
-                data: [1, 0, 4]
-            }, {
-                name: 'John',
-                data: [5, 7, 3]
-            }]
-        });
-    }*/
-//}); 
+    var opciones = {
+        chart: {
+            renderTo: 'container',
+            type: 'spline'
+        },
+        series: [{}]
+    };
 
+    $.getJSON('pesos_paciente.json', function(data) {
+        opciones.series[0].data = data;
+        var chart = new Highcharts.Chart(opciones);
+    });
+}*/
+function grafica_peso2() {
+
+    var opciones = {
+    	title: {
+    		text: 'Peso',
+    		x: -20 //center
+    	},
+    	tooltip: {
+            valueSuffix: 'Kg'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        chart: {
+            renderTo: 'grafica-peso',
+            type: 'spline'
+        },
+        series: [{}]
+    };
+
+    $.getJSON('json_examples/pesos_paciente.json', function(data) {
+        opciones.series[0].data = data;
+        var chart = new Highcharts.Chart(opciones);
+    });
+}
 
 
 function grafica_peso() {

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es-ES" data-ng-app="appMedico">
+
+<head>
+	<!-- Metadatos -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Alberto Miedes Garcés">
+	
+	<!-- Título -->
+	<title>glUCModel</title>
+	
+	<!-- jQuery -->
+	<script src="lib/jQuery/jquery-2.1.4-2.js"></script>
+	
+	<!-- AngularJS -->
+	<script src="lib/angular-1.4.7/angular.js"></script>
+	<script src="js/controladoresMedico.js"></script>
+	
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="css/reset.css">
+	  
+	<!-- BootStrap Library -->
+	<link rel="stylesheet" href="lib/Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<script src="lib/Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	
+	<!-- Hoja de estilos propia -->
+	<link href="css/other.css" rel="stylesheet" type="text/css">
+	
+	<!-- Mi propio javascript -->
+	<script type="text/javascript" src="js/charts.js"></script>
+	<!-- <script type="text/javascript" src="js/expediente-paciente.js"></script> -->
+	   
+	<!-- Highcharts -->
+	<script src="lib/Highcharts/highcharts.js"></script>
+	
+</head>
+
+<body>
+	<!-- Header -->
+	<div data-ng-include="'header.html'"></div>
+	
+	<!-- Título de la sección -->
+	<div class="jumbotron" id="titulo_seccion">
+	    <p>Revisar casos</p>
+	</div>
+	
+	<!-- Container Ficha del paciente -->
+	<div class="container">
+	    <div class="panel panel-default">
+	        <div class="panel-heading">
+	            <h3 class="panel-title">Información básica</h3> 
+	        </div>
+	        <div class="panel-body" data-ng-controller="ControladorMedico">
+	            <!-- $$ Columna foto -->
+	            <div class="col-sm-4">
+	                <img src="img/placeholders/portrait.png" class="img-responsive" alt="Imagen del paciente" width="200" height="300">
+	            </div>
+	            <!-- ## Columna foto -->
+	            <!-- $$ Columna datos 1 -->
+	            <div class="col-sm-4">
+	                <ul>
+	                    <li>Nombre: {{ficha_pac.name}}</li>
+	                    <li>Peso: {{ficha_pac.weight}}</li>
+	                    <li>Altura: {{ficha_pac.height}}</li>
+	                    <li>IMC: {{ficha_pac.imc}}</li>
+						<li>Tipo de diabetes: {{ficha_pac.diabetes_type}}</li>
+	                </ul>
+	            </div>
+	            <!-- ## Columna datos 1 -->
+	            <!-- $$ Columna datos 2 -->
+	            <div class="col-sm-4">
+	                <ul>
+	                    <li>Otras enfermedades:
+	                        <ol>
+	                            <li>{{ficha_pac.illnesses}}</li>
+	                        </ol>
+	                    </li>
+	                    <li>Medicación actual:
+	                        <ol>
+	                            <li>{{ficha_pac.medication}}</li>
+	                        </ol>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- ## Columna datos 2 -->
+	        </div>
+	    </div>
+	</div>
+	<!-- ./ Container Ficha del paciente -->
+	
+	<!-- Container Gráficas -->
+	<div class="container">
+	    <div class="panel panel-default">
+	    
+	    	<!-- panel-heading  -->
+	        <div class="panel-heading">
+	            <h3 class="panel-title">Variables bajo seguimiento</h3>
+	        </div>
+	        <!-- ./ panel-heading -->
+	        
+	        <!-- panel-body -->
+	        <div class="panel-body">
+	        
+	            <!-- Fila 1/3 de gráficas -->
+	            <div class="row">
+	                <!-- ================== 1. PESO =============== -->
+	                <div class="col-md-6">
+	                    <div class="panel panel-default panel-formal">
+	                        <div class="panel-body" id="grafica-peso">
+	                            <script>grafica_peso2();</script>
+	                        </div>
+	                    </div>
+	                </div>
+	                <!-- ================== 2. Glucemias =============== -->
+	                <div class="col-md-6">
+	                	<p>Aquí va la gráfica 2</p>
+	                </div>
+	            </div>
+	            <!-- ./ Fila 1/3 gráficas -->
+	              
+	        </div>
+	        <!-- ./ panel-body -->
+	    </div>
+	    <!-- ./ panel panel-default -->
+	</div>
+	<!-- ./ Container Gráficas -->
+
+	
+	<!-- Footer -->
+	<div data-ng-include="'footer.html'"></div>
+	
+</body>
+</html>

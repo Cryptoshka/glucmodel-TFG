@@ -17,5 +17,10 @@ appMedico.controller('ControladorMedico', ['$scope', '$http', function($scope, $
 	});
 
 	$scope.ordenRecs = 'date';
+	
+	/* Recuperación de la ficha básica de un paciente */
+	$http.get('json_examples/info_ficha_paciente.json').success(function(data) {
+		$scope.ficha_pac = data;
+	});
   
 }]);
