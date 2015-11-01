@@ -1,23 +1,23 @@
-function grafica_peso3() {
+function grafica_peso() {
 
 	var opciones = {
 		title: {
-            text: 'Esto es el título',
+            text: 'Peso',
             x: -20 //center
         },
         subtitle: {
-            text: 'Esto es el subtítulo',
+            text: 'A lo largo del tiempo',
             x: -20 //center
         },
         xAxis: {
         	title: {
-                text: 'Título eje X'
+                text: 'Fecha'
             },
             type: 'datetime'
         },
         yAxis: {
             title: {
-                text: 'Título eje Y'
+                text: 'Peso (en Kg)'
             },
             plotLines: [{
                 value: 0,
@@ -32,36 +32,22 @@ function grafica_peso3() {
             borderWidth: 0
         },
         series: [{
-            name: 'Nombre serie',
+            name: 'Peso',
             data: [{}]
         }]
 	};
 	
-	$.getJSON('json_examples/pesos_paciente2.json', function(data) {
-		var aux = data;
+	$.getJSON('json_examples/pesos_paciente.json', function(data) {
+
 		var datos = data;
-		
-		// Antes de procesarlos:
-		console.log("Antes de procesarlos:");
-		for (var i in datos) {
-			console.log(datos[i]);
-		}
 		
 		// Los proceso:
 		for (var i in datos) {
 			datos[i][0] = Date.parse(datos[i][0]);
-			//datos[i][0] = -datos[i][0];
 		}
 		
-		// Después de procesarlos:
-		console.log("Después de procesarlos:");
-		for (var i in datos) {
-			console.log(datos[i]);
-		}
-		
-		//var myDate = new Date('2013-06-08T06:00:00.000-07:00');
         opciones.series[0].data = datos;
-        $('#grafica-glucemias').highcharts(opciones);
+        $('#grafica-peso').highcharts(opciones);
     });
 	
 }
@@ -202,44 +188,6 @@ function grafica_peso2() {
     $.getJSON('json_examples/pesos_paciente.json', function(data) {
         opciones.series[0].data = data;
         var chart = new Highcharts.Chart(opciones);
-    });
-}
-
-
-function grafica_peso() {
-
-    $('#grafica-peso').highcharts({
-        title: {
-            text: 'Peso',
-            x: -20 //center
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'Peso (Kg)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        tooltip: {
-            valueSuffix: 'Kg'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Peso',
-            data: [71.0, 70.9, 79.5, 74.5, 78.2, 71.5, 75.2, 76.5, 73.3, 75.3, 73.9, 79.6]
-        }]
     });
 }
 
