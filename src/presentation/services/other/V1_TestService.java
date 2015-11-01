@@ -14,6 +14,7 @@ public class V1_TestService {
 	/**
 	 * Método para probar si Jersey redirecciona correctamente las peticiones
 	 * HTTP al servicio web.
+	 * Acceso: http://localhost:8080/glucmodel/api/test
 	 */
 	@GET
 	@Produces(MediaType.TEXT_HTML)

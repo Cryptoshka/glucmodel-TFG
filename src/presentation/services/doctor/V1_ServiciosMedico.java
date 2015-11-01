@@ -20,7 +20,7 @@ public class V1_ServiciosMedico {
 	/**
 	 * Devuelve id, nombre y apellidos de los pacientes de un médico en concreto
 	 * en formato JSON.
-	 * Acceso: http://localhost:8080/glucmodel/api/v1/medico?id=123
+	 * Acceso: http://localhost:8080/glucmodel/api/v1/medico/39
 	 * @param id ID del médico.
 	 * @return String con los datos de los pacientes en formato JSON.
 	 * @throws Exception
