@@ -5,9 +5,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 
-import beans.InfoBasicaPaciente;
-import beans.MedidaPeso;
-import beans.NombresPacientes;
+import business.pojos.beans_viejos.InfoBasicaPaciente;
+import business.pojos.beans_viejos.MedidaPeso;
+import business.pojos.beans_viejos.NombresPacientes;
 
 public class DBGlucmodel {
 	

@@ -3,9 +3,9 @@ package integration.database;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
-import beans.InfoBasicaPaciente;
-import beans.MedidaPeso;
-import beans.NombresPacientes;
+import business.pojos.beans_viejos.InfoBasicaPaciente;
+import business.pojos.beans_viejos.MedidaPeso;
+import business.pojos.beans_viejos.NombresPacientes;
 
 public class FuncionesBD {
 	

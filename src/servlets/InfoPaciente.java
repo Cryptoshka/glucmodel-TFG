@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.InfoBasicaPaciente;
-import beans.MedidaPeso;
+import business.pojos.beans_viejos.InfoBasicaPaciente;
+import business.pojos.beans_viejos.MedidaPeso;
 import integration.database.FuncionesBD;
 import integration.database.InfoLogin;
 

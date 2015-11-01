@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.NombresPacientes;
+import business.pojos.beans_viejos.NombresPacientes;
 import integration.database.FuncionesBD;
 
 /**

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es-ES" data-ng-app="appMedico">
+
+<head>
+	<!-- Metadatos -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Alberto Miedes Garcés">
+	
+	<!-- Título -->
+	<title>glUCModel</title>
+	
+	<!-- jQuery -->
+	<script src="lib/jQuery/jquery-2.1.4-2.js"></script>
+	
+	<!-- AngularJS -->
+	<script src="lib/angular-1.4.7/angular.js"></script>
+	<script src="js/controladoresMedico.js"></script>
+	
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="css/reset.css">
+   
+	<!-- BootStrap Library -->
+	<link rel="stylesheet" href="lib/Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<script src="lib/Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	
+	<!-- Hoja de estilos propia -->
+	<link href="css/other.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!-- Header -->
+	<div data-ng-include="'header.html'"></div>
+	
+	<!-- Título de la sección -->
+	<div class="jumbotron" id="titulo_seccion">
+	    <p>Ventana Principal</p>
+	</div>
+	
+	<!-- Panel Principal -->
+	<div class="container">
+	    <!-- row S.Rec. -->
+	    <div class="row">
+	        <!-- col-lg-12 -->
+	        <div class="col-lg-12">
+	            <!-- panel -->
+	            <div class="panel panel-default"  data-ng-controller="ControladorMedico">
+	                <!-- panel-heading -->
+	                <div class="panel-heading">
+	                    <h3 class="panel-title">Recomendaciones sugeridas</h3>
+	                </div>
+	                <!-- ./ panel-heading -->
+	                <!-- panel-body -->
+	                <div class="panel-body">
+	                    <!-- table -->
+	                    <table class="tabla-pacientes" id="tabla-pacientes">
+	                    
+	                        <tr class="tr-headers">
+	                            <th id="th_paciente">Paciente</th>
+	                            <th id="th_fecha">Fecha</th>
+	                            <th id="th_acciones">Acciones</th>
+	                        </tr>
+	
+	
+							<tr class="tr-paciente" data-ng-repeat="rec in lista_recs | filter:buscaRec | orderBy:ordenRecs">
+								<!-- Nombre del paciente y descripción de la recomendación -->
+								<td class="td-recomendacion">
+		                        	<div class="text-default" data-toggle="collapse" data-target=".div_ocultar"> {{rec.nombre_paciente}} </div>
+		                            <div class="text-default collapse in div_ocultar rec-detalle"> {{rec.titulo_rec}}: {{rec.desc_rec}} </div>
+		                    	</td>
+
+								<!-- Fecha -->
+								<td class="td-fecha">
+	                                <div> {{rec.fecha_rec}} </div>
+	                            </td>
+	                            
+	                            <!-- Panel de acciones -->
+	                            <td class="td-acciones">
+	                                <div class="acc-principal col-xs-3">
+	                                    <button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-ok align-both"></span></button>
+	                                </div>
+	                                <div class="acc-principal col-xs-3">
+	                                    <button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove align-both"></span></button>
+	                                </div>
+	                                <div class="col-xs-3 collapse in div_ocultar">
+	                                    <button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil align-both"></span></button>
+	                                </div>
+	                                <div class="col-xs-3 collapse in div_ocultar">
+	                                    <button type="button" class="btn btn-default btn-xs">
+	                                        <abbr title="Ver paciente en detalle"><span class="glyphicon glyphicon-eye-open align-both"></span></abbr>
+	                                    </button>
+	                                </div>    
+	                            </td>
+							</tr>
+	                        
+	                    </table>
+	                    <!-- ./ table -->
+	                </div>
+	                <!-- ./ panel-body -->
+	                <!-- panel-footer -->
+	                <div class="panel-footer clearfix">
+	                    <div class="col-sm-6">
+	                        <label>Ordenar por: </label>
+	                        <select class="selectpicker" data-ng-model="ordenRecs">
+	                            <option value="-fecha_rec">Más recientes</option>
+	                            <option value="fecha_rec">Más viejas</option>
+	                            <option value="prio_pac">Prioridad del paciente</option>
+	                            <option value="prio_rec">Prioridad de la recomendación</option>
+	                        </select>
+	                    </div>
+	                    <div class="col-sm-3 pull-right">
+	                        <div class="input-group input-group-sm">
+	                            <!-- <input type="text" class="form-control" placeholder="Search"> -->
+	                            <input type="text" class="form-control float-right" placeholder="Buscar" data-ng-model="buscaRec">
+	                        </div>
+	                    </div> 
+	                </div>
+	                <!-- ./ panel-footer -->
+	            </div>
+	            <!-- ./panel -->
+	        </div>
+	        <!-- ./ col-lg-12 -->
+	    </div>
+	    <!-- ./ row S.Rec. -->
+	    <!-- row G.Pacientes y S.Rec. -->
+	    <div class="row">
+	        <!-- col G.Pacientes -->
+	        <div class="col-md-6">
+	            <div class="panel panel-default">
+	                <!-- Cabecera G.Pacientes -->
+	                <div class="panel-heading">
+	                    <h3 class="panel-title">Gestión de pacientes</h3>          
+	                </div>
+	                <!-- ./ Cabecera G.Pacientes -->
+	                <!-- Cuerpo G.Pacientes -->
+	                <div class="panel-body" data-ng-controller="ControladorMedico">
+	                    <div class="list-group" id="aqui">
+	                    
+							<ul class="pacientes">
+					          <li class="list-group-item" data-ng-repeat="paciente in pacientes | filter:query">
+					          	{{paciente.name}} {{paciente.surname1}} {{paciente.surname2}}
+					          </li>
+					        </ul>
+					        
+	                    </div>
+	                </div>
+	                <!-- ./ Cuerpo G.Pacientes -->
+	                <!-- panel footer -->
+	                <div class="panel-footer">
+	                    <div class="row">
+	                        <div class="col col-sm-12">
+	                        	<input type="text" class="form-control float-right" placeholder="Search" data-ng-model="query">
+	                        </div>
+	                    </div>
+	                </div>
+	                <!-- ./ panel footer -->
+	            </div>
+	        </div>
+	        <!-- ./ col G.Pacientes -->
+	
+	        <!-- col S.Rec. -->
+	        <div class="col-md-6">
+	            <div class="panel panel-default">
+	                <!-- $$ Cabecera del S.Rec. -->
+	                <div class="panel-heading">
+	                    <h3 class="panel-title">Sistema Recomendador</h3>
+	                </div>
+	                <!-- ## Cabecera del S.Rec. -->
+	                        
+	                <!-- $$ Cuerpo del S.Rec. -->
+	                <div class="panel-body">
+	                    <div class="list-group">
+	                        <a href="m_recomendaciones_manuales.jsp" class="list-group-item">Crear recomendaciones de forma manual</a>
+	                        <a href="m_revisar_automaticas.jsp" class="list-group-item">Revisar recomendaciones automáticas</a>
+	                        <a href="m_revisar_casos.jsp" class="list-group-item">Revisar los casos de seguimiento</a>
+	                    </div>
+	                </div>
+	                <!-- ## Cuerpo del S.Rec. -->
+	            </div>
+	        </div>
+	        <!-- ./ col S.Rec. -->
+	    </div>
+	    <!-- ./ row G.Pacientes y S.Rec. -->
+	
+	</div>
+	<!-- ./ Panel principal -->
+	
+	<!-- Footer -->
+	<div data-ng-include="'footer.html'"></div>
+</body>
+</html>
