@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="appMedico">
+<html lang="es-ES" data-ng-app="appMedico">
 
 <head>
 	<!-- Metadatos -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<html lang="es-ES">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Alberto Miedes Garcés">
-	<meta name="designer" content="Alberto Miedes Garcés">
+	
+	<!-- Título -->
 	<title>glUCModel</title>
 	
 	<!-- jQuery -->
@@ -16,12 +16,21 @@
 	<!-- AngularJS -->
 	<script src="lib/angular-1.4.7/angular.js"></script>
 	<script src="js/controladoresMedico.js"></script>
-	<div ng-include="'head_content.html'"></div>
+	
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="css/reset.css">
+   
+	<!-- BootStrap Library -->
+	<link rel="stylesheet" href="lib/Bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<script src="lib/Bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	
+	<!-- Hoja de estilos propia -->
+	<link href="css/other.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 	<!-- Header -->
-	<div ng-include="'header.html'"></div>
+	<div data-ng-include="'header.html'"></div>
 	
 	<!-- Título de la sección -->
 	<div class="jumbotron" id="titulo_seccion">
@@ -35,7 +44,7 @@
 	        <!-- col-lg-12 -->
 	        <div class="col-lg-12">
 	            <!-- panel -->
-	            <div class="panel panel-default"  ng-controller="ControladorMedico">
+	            <div class="panel panel-default"  data-ng-controller="ControladorMedico">
 	                <!-- panel-heading -->
 	                <div class="panel-heading">
 	                    <h3 class="panel-title">Recomendaciones sugeridas</h3>
@@ -44,7 +53,7 @@
 	                <!-- panel-body -->
 	                <div class="panel-body">
 	                    <!-- table -->
-	                    <table class="tabla-pacientes" id="tabla-pacientes"">
+	                    <table class="tabla-pacientes" id="tabla-pacientes">
 	                    
 	                        <tr class="tr-headers">
 	                            <th id="th_paciente">Paciente</th>
@@ -53,9 +62,9 @@
 	                        </tr>
 	
 	
-							<tr class="tr-paciente" ng-repeat="rec in lista_recs | filter:buscaRec | orderBy:ordenRecs">
+							<tr class="tr-paciente" data-ng-repeat="rec in lista_recs | filter:buscaRec | orderBy:ordenRecs">
 								<!-- Nombre del paciente y descripción de la recomendación -->
-								<td class="td-recomendacion" id="">
+								<td class="td-recomendacion">
 		                        	<div class="text-default" data-toggle="collapse" data-target=".div_ocultar"> {{rec.nombre_paciente}} </div>
 		                            <div class="text-default collapse in div_ocultar rec-detalle"> {{rec.titulo_rec}}: {{rec.desc_rec}} </div>
 		                    	</td>
@@ -92,7 +101,7 @@
 	                <div class="panel-footer clearfix">
 	                    <div class="col-sm-6">
 	                        <label>Ordenar por: </label>
-	                        <select class="selectpicker" ng-model="ordenRecs">
+	                        <select class="selectpicker" data-ng-model="ordenRecs">
 	                            <option value="-fecha_rec">Más recientes</option>
 	                            <option value="fecha_rec">Más viejas</option>
 	                            <option value="prio_pac">Prioridad del paciente</option>
@@ -102,7 +111,7 @@
 	                    <div class="col-sm-3 pull-right">
 	                        <div class="input-group input-group-sm">
 	                            <!-- <input type="text" class="form-control" placeholder="Search"> -->
-	                            <input type="text" class="form-control float-right" placeholder="Buscar" ng-model="buscaRec">
+	                            <input type="text" class="form-control float-right" placeholder="Buscar" data-ng-model="buscaRec">
 	                        </div>
 	                    </div> 
 	                </div>
@@ -124,11 +133,11 @@
 	                </div>
 	                <!-- ./ Cabecera G.Pacientes -->
 	                <!-- Cuerpo G.Pacientes -->
-	                <div class="panel-body" ng-controller="ControladorMedico">
+	                <div class="panel-body" data-ng-controller="ControladorMedico">
 	                    <div class="list-group" id="aqui">
 	                    
 							<ul class="pacientes">
-					          <li class="list-group-item" ng-repeat="paciente in pacientes | filter:query">
+					          <li class="list-group-item" data-ng-repeat="paciente in pacientes | filter:query">
 					          	{{paciente.name}} {{paciente.surname1}} {{paciente.surname2}}
 					          </li>
 					        </ul>
@@ -140,7 +149,7 @@
 	                <div class="panel-footer">
 	                    <div class="row">
 	                        <div class="col col-sm-12">
-	                        	<input type="text" class="form-control float-right" placeholder="Search" ng-model="query">
+	                        	<input type="text" class="form-control float-right" placeholder="Search" data-ng-model="query">
 	                        </div>
 	                    </div>
 	                </div>
@@ -174,9 +183,9 @@
 	    <!-- ./ row G.Pacientes y S.Rec. -->
 	
 	</div>
-	<!-- ## Panel principal -->
+	<!-- ./ Panel principal -->
 	
 	<!-- Footer -->
-	<div ng-include="'footer.html'"></div>
+	<div data-ng-include="'footer.html'"></div>
 </body>
 </html>
