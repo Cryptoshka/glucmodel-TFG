@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="appMedico">
 
 <head>
 	<!-- Metadatos -->
@@ -15,6 +15,7 @@
 	
 	<!-- AngularJS -->
 	<script src="lib/angular-1.4.7/angular.js"></script>
+	<script src="js/controladoresMedico.js"></script>
 	<div ng-include="'head_content.html'"></div>
 </head>
 
@@ -177,40 +178,15 @@
 	                </div>
 	                <!-- ./ Cabecera G.Pacientes -->
 	                <!-- Cuerpo G.Pacientes -->
-	                <div class="panel-body">
+	                <div class="panel-body" ng-controller="PatientListCtrl">
 	                    <div class="list-group" id="aqui">
 	                    
-	                    <script>
-	                    	var url = "http://localhost:8080/glucmodel/api/doctor/lista/39";
-	                    	var datos = { id_medico: 39};
-	                    	$.getJSON(url, datos, procesaLista).error(funcionError);
-	                    	
-	                    	function procesaLista(data) {
-	
-	                    		var newHTML = "";
-	                    		$.each(data, function(nada, elem) {
-	                    			newHTML += "<a href='#' class='list-group-item'>" 
-	                    					+ elem.id + " - " + elem.name + " " + elem.surname1 + " " + elem.surname2
-	                    					+ "<button type='submit' class='btn btn-default btn-xs pull-right'>"
-	                                        + "<span class='glyphicon glyphicon-trash'></span>"
-	                                        + "</button>";
-	                    		});
-	                    		
-	                    		$("#aqui").append(newHTML);
-	                    	}
-	                    	
-	                    	function funcionError() {
-	                    		var errorMsg = "<p>Error obteniendo la lista de pacientes del servidor.</p>"
-	                    		$("#aqui").append(errorMsg);
-	                    	}
-	                    </script>
-	                    	
-	
-	                        <!--<a href="#" class="list-group-item">Paciente 4
-	                            <button type="submit" class="btn btn-default btn-xs pull-right">
-	                                <span class="glyphicon glyphicon-trash"></span>
-	                            </button>
-	                        </a>-->
+							<ul class="pacientes">
+					          <li class="list-group-item" ng-repeat="paciente in pacientes | filter:query">
+					          	{{paciente.name}} {{paciente.surname1}} {{paciente.surname2}}
+					          </li>
+					        </ul>
+					        
 	                    </div>
 	                </div>
 	                <!-- ./ Cuerpo G.Pacientes -->
@@ -218,8 +194,7 @@
 	                <div class="panel-footer">
 	                    <div class="row">
 	                        <div class="col col-sm-12">
-	                            <!--<button type="button" class="btn-ver-md float-right">Alta</button>-->
-	                            <a href="m-alta-paciente.jsp" class="btn-ver-md float-right">Alta</a>
+	                        	<input type="text" class="form-control float-right" placeholder="Search" ng-model="query">
 	                        </div>
 	                    </div>
 	                </div>
