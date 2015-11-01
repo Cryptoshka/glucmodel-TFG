@@ -1,13 +1,21 @@
 'use strict';
 
-/* Controlador de la lista de pacientes */
+/* Controlador para el médico */
 
 var appMedico = angular.module('appMedico', []);
 
-appMedico.controller('PatientListCtrl', ['$scope', '$http', function($scope, $http) {
-  $http.get('json_examples/lista_pacientes.json').success(function(data) {
-    $scope.pacientes = data;
-  });
+appMedico.controller('ControladorMedico', ['$scope', '$http', function($scope, $http) {
+	
+	/* Recuperación de la lista de pacientes */
+	$http.get('json_examples/lista_pacientes.json').success(function(data) {
+		$scope.pacientes = data;
+	});
+	
+	/* Recuperación de la lista de recomendaciones sugeridas */
+	$http.get('json_examples/lista_recs_sugeridas.json').success(function(data) {
+		$scope.lista_recs = data;
+	});
 
-  $scope.orderProp = 'age';
+	$scope.ordenRecs = 'date';
+  
 }]);

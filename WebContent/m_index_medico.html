@@ -35,7 +35,7 @@
 	        <!-- col-lg-12 -->
 	        <div class="col-lg-12">
 	            <!-- panel -->
-	            <div class="panel panel-default">
+	            <div class="panel panel-default"  ng-controller="ControladorMedico">
 	                <!-- panel-heading -->
 	                <div class="panel-heading">
 	                    <h3 class="panel-title">Recomendaciones sugeridas</h3>
@@ -44,94 +44,46 @@
 	                <!-- panel-body -->
 	                <div class="panel-body">
 	                    <!-- table -->
-	                    <table class="tabla-pacientes" id="tabla-pacientes">
+	                    <table class="tabla-pacientes" id="tabla-pacientes"">
+	                    
 	                        <tr class="tr-headers">
 	                            <th id="th_paciente">Paciente</th>
 	                            <th id="th_fecha">Fecha</th>
 	                            <th id="th_acciones">Acciones</th>
 	                        </tr>
 	
-	                        <tr class="tr-paciente" id="paciente0">
-	                            <!-- Nombre paciente y descripción de la recomendacion-->
-	                            <td class="td-recomendacion">
-	                                <div class="text-danger" data-toggle="collapse" data-target=".div_ocultar">
-	                                    Martin Jermaine
-	                                </div>
+	
+							<tr class="tr-paciente" ng-repeat="rec in lista_recs | filter:buscaRec | orderBy:ordenRecs">
+								<!-- Nombre del paciente y descripción de la recomendación -->
+								<td class="td-recomendacion" id="">
+		                        	<div class="text-default" data-toggle="collapse" data-target=".div_ocultar"> {{rec.nombre_paciente}} </div>
+		                            <div class="text-default collapse in div_ocultar rec-detalle"> {{rec.titulo_rec}}: {{rec.desc_rec}} </div>
+		                    	</td>
+
+								<!-- Fecha -->
+								<td class="td-fecha">
+	                                <div> {{rec.fecha_rec}} </div>
+	                            </td>
 	                            
-	                                <div class="text-warning collapse in div_ocultar rec-detalle">
-	                                    Título Recomendacion: No hay datos de ninguna medida de tensión registrados en el último mes. Por favor, introduzca datos de sus medidas de tensión con mayor frecuencia.
-	                                </div>
-	                            </td>
-	                            <!-- ./Nombre paciente y descripcion -->
-	
-	                            <td class="td-fecha">
-	                                <div>
-	                                    12/23/2323
-	                                </div>
-	                            </td>
-	
-	                            <!-- Acciones posibles -->
+	                            <!-- Panel de acciones -->
 	                            <td class="td-acciones">
 	                                <div class="acc-principal col-xs-3">
-	                                    <button type="button" class="btn btn-success btn-xs disabled">
-	                                        <span class="glyphicon glyphicon-ok align-both"></span>
-	                                    </button>
+	                                    <button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-ok align-both"></span></button>
 	                                </div>
 	                                <div class="acc-principal col-xs-3">
-	                                    <button type="button" class="btn btn-danger btn-xs">
-	                                        <span class="glyphicon glyphicon-remove align-both"></span>
-	                                    </button>
+	                                    <button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove align-both"></span></button>
 	                                </div>
 	                                <div class="col-xs-3 collapse in div_ocultar">
-	                                    <button type="button" class="btn btn-warning btn-xs">
-	                                        <span class="glyphicon glyphicon-pencil align-both"></span>
-	                                    </button>
+	                                    <button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil align-both"></span></button>
 	                                </div>
 	                                <div class="col-xs-3 collapse in div_ocultar">
-	                                    <button type="button" class="btn btn-default btn-xs" onclick="window.location='m_ejemplo_manual.jsp'">
+	                                    <button type="button" class="btn btn-default btn-xs">
 	                                        <abbr title="Ver paciente en detalle"><span class="glyphicon glyphicon-eye-open align-both"></span></abbr>
 	                                    </button>
 	                                </div>    
 	                            </td>
-	                        </tr>
+							</tr>
 	                        
-	                        <tr class="tr-paciente" id="paciente1">
-	                            <td class="td-recomendacion">
-	                                <div class="text-danger" data-toggle="collapse" data-target=".div_ocultar2">
-	                                    Nasim Mihkel
-	                                </div>
-	                                <div class="text-success collapse in div_ocultar2 rec-detalle">
-	                                    No hay datos de ninguna medida de tensión registrados en el último mes. Por favor, introduzca datos de sus medidas de tensión con mayor frecuencia.
-	                                </div>
-	                            </td>
-	                            <td class="td-fecha">
-	                                <div>
-	                                    12/23/2323
-	                                </div>
-	                            </td>
-	                            <td class="td-acciones">
-	                                <div class="col-xs-3">
-	                                    <button type="button" class="btn btn-success btn-xs disabled">
-	                                        <span class="glyphicon glyphicon-ok align-both"></span>
-	                                    </button>
-	                                </div>
-	                                <div class="col-xs-3">
-	                                    <button type="button" class="btn btn-danger btn-xs">
-	                                        <span class="glyphicon glyphicon-remove align-both"></span>
-	                                    </button>
-	                                </div>
-	                                <div class="col-xs-3 collapse in div_ocultar2">
-	                                    <button type="button" class="btn btn-warning btn-xs">
-	                                        <span class="glyphicon glyphicon-pencil align-both"></span>
-	                                    </button>
-	                                </div>
-	                                <div class="col-xs-3 collapse in div_ocultar">
-	                                    <button type="button" class="btn btn-default btn-xs" onclick="window.location='m_ejemplo_manual.jsp'">
-	                                        <abbr title="Ver paciente en detalle"><span class="glyphicon glyphicon-eye-open align-both"></span></abbr>
-	                                    </button>
-	                                </div> 
-	                            </td>
-	                        </tr>
 	                    </table>
 	                    <!-- ./ table -->
 	                </div>
@@ -140,23 +92,17 @@
 	                <div class="panel-footer clearfix">
 	                    <div class="col-sm-6">
 	                        <label>Ordenar por: </label>
-	                        <select class="selectpicker">
-	                            <option>Fecha</option>
-	                            <option>Nivel de seguimiento</option>
-	                            <option>Recomendaciones pendientes</option>
+	                        <select class="selectpicker" ng-model="ordenRecs">
+	                            <option value="-fecha_rec">Más recientes</option>
+	                            <option value="fecha_rec">Más viejas</option>
+	                            <option value="prio_pac">Prioridad del paciente</option>
+	                            <option value="prio_rec">Prioridad de la recomendación</option>
 	                        </select>
 	                    </div>
 	                    <div class="col-sm-3 pull-right">
-	                        <!--<div class="input-group input-group-sm">
-	                          <input type="text" class="form-control" placeholder="Search" aria-describedby="sizing-addon1">
-	                          <span class="input-group-addon btn btn-sm glyphicon glyphicon-search"></span></input>
-	                          <!--<span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon1"></span>-->
-	                        <!--</div>-->
 	                        <div class="input-group input-group-sm">
-	                            <input type="text" class="form-control" placeholder="Search">
-	                            <span class="input-group-btn">
-	                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-	                            </span>
+	                            <!-- <input type="text" class="form-control" placeholder="Search"> -->
+	                            <input type="text" class="form-control float-right" placeholder="Buscar" ng-model="buscaRec">
 	                        </div>
 	                    </div> 
 	                </div>
@@ -178,7 +124,7 @@
 	                </div>
 	                <!-- ./ Cabecera G.Pacientes -->
 	                <!-- Cuerpo G.Pacientes -->
-	                <div class="panel-body" ng-controller="PatientListCtrl">
+	                <div class="panel-body" ng-controller="ControladorMedico">
 	                    <div class="list-group" id="aqui">
 	                    
 							<ul class="pacientes">
