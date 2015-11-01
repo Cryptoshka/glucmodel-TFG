@@ -1,0 +1,62 @@
+[
+   {
+      "nombre_paciente": "Ignacio Robles Oliveros",
+      "id_pac": "1",
+      "titulo_rec": "Título Rec. 1",
+      "prio_pac": "3",
+      "id_rec": "1",
+      "desc_rec": "Descripción Rec. 1",
+      "fecha_rec": "2015-01-03T10:18:05Z",
+      "prio_rec": "1"
+   },
+   {
+      "nombre_paciente": "Juan José Bustos Pereiro",
+      "id_pac": "2",
+      "titulo_rec": "Título Rec. 2",
+      "prio_pac": "2",
+      "id_rec": "2",
+      "desc_rec": "Descripción Rec. 2",
+      "fecha_rec": "2015-02-07T11:18:15Z",
+      "prio_rec": "2"
+   },
+   {
+      "nombre_paciente": "Andrés Oñate Mestre",
+      "id_pac": "3",
+      "titulo_rec": "Título Rec. 3",
+      "prio_pac": "1",
+      "id_rec": "3",
+      "desc_rec": "Descripción Rec. 3",
+      "fecha_rec": "2015-03-12T12:18:25Z",
+      "prio_rec": "3"
+   },
+   {
+      "nombre_paciente": "Julia Diego Coloma",
+      "id_pac": "4",
+      "titulo_rec": "Título Rec. 1",
+      "prio_pac": "1",
+      "id_rec": "1",
+      "desc_rec": "Descripción Rec. 1",
+      "fecha_rec": "2015-04-20T13:18:35Z",
+      "prio_rec": "1"
+   },
+   {
+      "nombre_paciente": "Lorena Alcázar Pizarro",
+      "id_pac": "5",
+      "titulo_rec": "Título Rec. 2",
+      "prio_pac": "2",
+      "id_rec": "2",
+      "desc_rec": "Descripción Rec. 2",
+      "fecha_rec": "2015-03-08T14:18:45Z",
+      "prio_rec": "2"
+   },
+   {
+      "nombre_paciente": "María Ángeles Mangas Martel",
+      "id_pac": "6",
+      "titulo_rec": "Título Rec. 3",
+      "prio_pac": "3",
+      "id_rec": "3",
+      "desc_rec": "Descripción Rec. 3",
+      "fecha_rec": "2015-02-02T15:18:55Z",
+      "prio_rec": "3"
+   }
+]

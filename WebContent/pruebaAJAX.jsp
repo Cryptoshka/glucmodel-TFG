@@ -31,7 +31,7 @@
                         </tr>
 
                         <tr class="tr-paciente" id="paciente0">
-                            <!-- Nombre paciente y descripci�n de la recomendacion-->
+                            <!-- Nombre paciente y descripción de la recomendacion-->
                             <td class="td-recomendacion">
                                 <div class="text-danger" data-toggle="collapse" data-target=".div_ocultar">
                                     Martin Jermaine
@@ -161,7 +161,7 @@
                     <div class="list-group" id="aqui">
                     
                     <script>
-                    	var url = "http://localhost:8080/glucmodel/api/v1/medico/lista/39";
+                    	var url = "http://localhost:8080/glucmodel/api/doctor/lista/39";
                     	var datos = { id_medico: 39};
                     	$.getJSON(url, datos, procesaLista).error(funcionError);
                     	

@@ -1,0 +1,38 @@
+[
+   {
+      "name": "Ignacio",
+      "surname1": "Robles",
+      "surname2": "Oliveros",
+      "id": "1"
+   },
+   {
+      "name": "Juan José",
+      "surname1": "Bustos",
+      "surname2": "Pereiro",
+      "id": "2"
+   },
+   {
+      "name": "Andrés",
+      "surname1": "Oñate",
+      "surname2": "Mestre",
+      "id": "3"
+   },
+   {
+      "name": "Julia",
+      "surname1": "Diego",
+      "surname2": "Coloma",
+      "id": "4"
+   },
+   {
+      "name": "Lorena",
+      "surname1": "Alcázar",
+      "surname2": "Pizarro",
+      "id": "5"
+   },
+   {
+      "name": "María Ángeles",
+      "surname1": "Mangas",
+      "surname2": "Martel",
+      "id": "6"
+   }
+]

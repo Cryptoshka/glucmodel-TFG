@@ -21,14 +21,14 @@
             <!-- ## Columna foto -->
             <!-- $$ Columna datos 1 -->
             <div class="col-sm-4">
-            	<jsp:useBean id="fichaPaciente" scope="request" class="beans.InfoBasicaPaciente" />
+            	<%-- <jsp:useBean id="fichaPaciente" scope="request" class="beans.InfoBasicaPaciente" />
                 <ul>
                     <li>Nombre: <%= fichaPaciente.getNomApell() %></li>
                     <li>Peso: <%= fichaPaciente.getPeso() %></li>
                     <li>Altura: <%= fichaPaciente.getAltura() %></li>
                     <li>IMC: <%= fichaPaciente.getImc() %></li>
 					<li>Tipo de diabetes: <%= fichaPaciente.getTipoDiabetes() %></li>
-                </ul>
+                </ul>--%>
             </div>
             <!-- ## Columna datos 1 -->
             <!-- $$ Columna datos 2 -->
