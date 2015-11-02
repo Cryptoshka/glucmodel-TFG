@@ -52,26 +52,26 @@ function grafica_peso() {
 	
 }
 
-function grafica3() {
+function grafica_glucemias() {
 
 	var opciones = {
 		title: {
-            text: 'Esto es el título',
+            text: 'Glucemias',
             x: -20 //center
         },
         subtitle: {
-            text: 'Esto es el subtítulo',
+            text: 'A lo largo del tiempo',
             x: -20 //center
         },
         xAxis: {
         	title: {
-                text: 'Título eje X'
+                text: 'Fecha'
             },
             type: 'datetime'
         },
         yAxis: {
             title: {
-                text: 'Título eje Y'
+                text: 'Glucemias'
             },
             plotLines: [{
                 value: 0,
@@ -86,35 +86,46 @@ function grafica3() {
             borderWidth: 0
         },
         series: [{
-            name: 'Nombre serie doble',
-            data: [[1,200], [2,203], [3,223], [4,212], [5,230], [6,195], [7,198], [8,205], [9,183], [10,198], [11,200], [12,202]]
+            name: 'Glucemia',
+            data: [{}]
         }]
 	};
 	
-	$('#grafica-3').highcharts(opciones);
+	$.getJSON('json_examples/glucemias_paciente.json', function(data) {
+
+		var datos = data;
+		
+		// Los proceso:
+		for (var i in datos) {
+			datos[i][0] = Date.parse(datos[i][0]);
+		}
+		
+        opciones.series[0].data = datos;
+        $('#grafica-glucemias').highcharts(opciones);
+    });
+	
 }
 
-function grafica4() {
+function grafica_insulina() {
 
 	var opciones = {
 		title: {
-            text: 'Esto es el título',
+            text: 'Insulina',
             x: -20 //center
         },
         subtitle: {
-            text: 'Esto es el subtítulo',
+            text: 'A lo largo del tiempo',
             x: -20 //center
         },
         xAxis: {
         	title: {
-                text: 'Título eje X'
+                text: 'Fecha'
             },
-            categories: ['categ1', 'categ2', 'categ3', 'categ4', 'categ5', 'categ6',
-                'categ7', 'categ8', 'categ9', 'categ10', 'categ11', 'categ12']
+            type: 'datetime'
         },
         yAxis: {
             title: {
-                text: 'Título eje Y'
+                text: 'Insulina'
             },
             plotLines: [{
                 value: 0,
@@ -129,134 +140,24 @@ function grafica4() {
             borderWidth: 0
         },
         series: [{
-            name: 'Nombre serie 1',
-            data: [200, 203, 223, 212, 230, 195, 198, 205, 183, 198, 200, 202]
-        },{
-            name: 'Nombre serie 2',
-            data: [210, 183, 243, 202, 210, 199, 158, 215, 193, 200, 210, 212]
+            name: 'Insulina',
+            data: [{}]
         }]
 	};
 	
-	$('#grafica-4').highcharts(opciones);
-}
+	$.getJSON('json_examples/insulinas_paciente.json', function(data) {
 
-
-
-function grafica_peso2() {
-
-    var opciones = {
-    	title: {
-    		text: 'Peso',
-    		x: -20 //center
-    	},
-    	subtitle: {
-    		text: 'A lo largo del último año',
-    	},
-    	xAxis: {
-    		title: {
-    			text: 'Fecha'
-    		},
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-    	yAxis: {
-            title: {
-                text: 'Peso (Kg)'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-    	tooltip: {
-            valueSuffix: 'Kg'
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        chart: {
-            renderTo: 'grafica-peso',
-            type: 'spline'
-        },
-        series: [{}]
-    };
-
-    $.getJSON('json_examples/pesos_paciente.json', function(data) {
-        opciones.series[0].data = data;
-        var chart = new Highcharts.Chart(opciones);
+		var datos = data;
+		
+		// Los proceso:
+		for (var i in datos) {
+			datos[i][0] = Date.parse(datos[i][0]);
+		}
+		
+        opciones.series[0].data = datos;
+        $('#grafica-insulina').highcharts(opciones);
     });
-}
-
-/* Muestra las glucemias en un mismo día, a lo largo del día */
-function glucemias_dia() {
-    $('#grafica-glucemias').highcharts({
-        title: {
-            text: 'Glucemias a lo largo del día',
-            x: -20 //center
-        },
-        xAxis: {
-            categories: ['0:00', '2:00', '4:00', '6:00', '8:00', '10:00',
-                '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
-        },
-        yAxis: {
-            title: {
-                text: 'Glucemias'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Glucemias',
-            data: [200, 203, 223, 212, 230, 195, 198, 205, 183, 198, 200, 202]
-        }]
-    });
-}
-
-/* Muestra las glucemias a lo largo de varios días, en el mismo momento del día */
-function glucemias_periodo() {
-    $('#grafica-glucemias').html("");
-    $('#grafica-glucemias').highcharts({
-        title: {
-            text: 'Glucemias a lo largo de varios días',
-            x: -20 //center
-        },
-        xAxis: {
-            categories: ['L', 'M', 'X', 'J', 'V', 'S', 'D']
-        },
-        yAxis: {
-            title: {
-                text: 'Glucemias'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'Glucemias',
-            data: [200, 203, 223, 212, 230, 195, 198]
-        }]
-    });
+	
 }
 
 function grafica_ejercicio() {
