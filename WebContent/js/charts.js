@@ -37,7 +37,9 @@ function grafica_peso() {
         }]
 	};
 	
-	$.getJSON('json_examples/pesos_paciente.json', function(data) {
+	var url_file = "json_examples/pesos_paciente.json";
+	var url_server = "http://localhost:8080/glucmodel/api/doctor/peso/123";
+	$.getJSON(url_server, function(data) {
 
 		var datos = data;
 		

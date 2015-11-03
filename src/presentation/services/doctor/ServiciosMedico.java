@@ -7,7 +7,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.google.gson.Gson;
+
 import integration.database.DBFunctions;
+import presentation.json_examples.JsonPesosPaciente;
 
 /**
  * Clase que agrupa los servicios que puede requerir un usuario de tipo médico
@@ -73,8 +76,18 @@ public class ServiciosMedico {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getPesosPaciente(@PathParam("id_paciente") Integer id) {
-		String ret = null;
-		return Response.ok(ret).build();
+		
+		/* DEBUG */System.out.println("Se ha llamado al servicio getPesosPaciente()");
+		
+		// Usamos los JSON de ejemplo mientras no esté en funcionamiento la BD
+		// Cuando esté activa, habrá que asegurarse de que devolvemos una cantidad razonable de valores.
+		String aux = JsonPesosPaciente.getJson();
+		
+		//Gson gson = new Gson() etc.
+		
+		/* DEBUG */System.out.println("Añadimos al response:\n" + aux);
+		
+		return Response.ok(aux).build();
 	}
 	
 	/**
