@@ -93,7 +93,10 @@ function grafica_glucemias() {
         }]
 	};
 	
-	$.getJSON('json_examples/glucemias_paciente.json', function(data) {
+	var url_file = "json_examples/glucemias_paciente.json";
+	var url_server = "http://localhost:8080/glucmodel/api/doctor/glucemias/123";
+	
+	$.getJSON(url_server, function(data) {
 
 		var datos = data;
 		
@@ -147,7 +150,10 @@ function grafica_insulina() {
         }]
 	};
 	
-	$.getJSON('json_examples/insulinas_paciente.json', function(data) {
+	var url_file = "json_examples/insulinas_paciente.json";
+	var url_server = "http://localhost:8080/glucmodel/api/doctor/insulina/123";
+	
+	$.getJSON(url_server, function(data) {
 
 		var datos = data;
 		

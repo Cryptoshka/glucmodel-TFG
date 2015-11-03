@@ -10,6 +10,8 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 
 import integration.database.DBFunctions;
+import presentation.json_examples.JsonGlucemiasPaciente;
+import presentation.json_examples.JsonInsulinasPaciente;
 import presentation.json_examples.JsonPesosPaciente;
 
 /**
@@ -92,7 +94,7 @@ public class ServiciosMedico {
 	
 	/**
 	 * Devuelve los últimos glucemias del paciente en formato JSON.
-	 * Acceso: http://localhost:8080/glucmodel/api/doctor/peso/XXX
+	 * Acceso: http://localhost:8080/glucmodel/api/doctor/glucemias/XXX
 	 * @param id ID del paciente.
 	 * @return String con los pesos del paciente en formato JSON.
 	 */
@@ -100,13 +102,23 @@ public class ServiciosMedico {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getGlucemiasPaciente(@PathParam("id_paciente") Integer id) {
-		String ret = null;
-		return Response.ok(ret).build();
+		
+		/* DEBUG */System.out.println("Se ha llamado al servicio getGlucemiasPaciente()");
+		
+		// Usamos los JSON de ejemplo mientras no esté en funcionamiento la BD
+		// Cuando esté activa, habrá que asegurarse de que devolvemos una cantidad razonable de valores.
+		String aux = JsonGlucemiasPaciente.getJson();
+		
+		//Gson gson = new Gson() etc.
+		
+		/* DEBUG */System.out.println("Añadimos al response:\n" + aux);
+		
+		return Response.ok(aux).build();
 	}
 	
 	/**
 	 * Devuelve las últimas medidas de insulina del paciente en formato JSON.
-	 * Acceso: http://localhost:8080/glucmodel/api/doctor/peso/XXX
+	 * Acceso: http://localhost:8080/glucmodel/api/doctor/insulina/XXX
 	 * @param id ID del paciente.
 	 * @return String con las medidas de insulina del paciente en formato JSON.
 	 */
@@ -114,7 +126,17 @@ public class ServiciosMedico {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getInsulinaPaciente(@PathParam("id_paciente") Integer id) {
-		String ret = null;
-		return Response.ok(ret).build();
+		
+		/* DEBUG */System.out.println("Se ha llamado al servicio getInsulinaPaciente()");
+		
+		// Usamos los JSON de ejemplo mientras no esté en funcionamiento la BD
+		// Cuando esté activa, habrá que asegurarse de que devolvemos una cantidad razonable de valores.
+		String aux = JsonInsulinasPaciente.getJson();
+		
+		//Gson gson = new Gson() etc.
+		
+		/* DEBUG */System.out.println("Añadimos al response:\n" + aux);
+		
+		return Response.ok(aux).build();
 	}
 }
