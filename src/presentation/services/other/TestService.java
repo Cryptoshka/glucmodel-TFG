@@ -8,13 +8,12 @@ import javax.ws.rs.core.Response;
 
 import integration.database.DBFunctions;
 
-@Path("/v1/test")
-public class V1_TestService {
+@Path("/test")
+public class TestService {
 
 	/**
 	 * Método para probar si Jersey redirecciona correctamente las peticiones
 	 * HTTP al servicio web.
-	 * Acceso: http://localhost:8080/glucmodel/api/test
 	 */
 	@GET
 	@Produces(MediaType.TEXT_HTML)

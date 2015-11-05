@@ -24,7 +24,7 @@ public class Database {
 		
 		// E.o.c. creamos una nueva
 		try {
-			Class.forName(DRIVER);
+			Class.forName(DRIVER); // Carga dinámica de código.
 		} catch (ClassNotFoundException e) {
 			System.err.println("[DB MSG] Error instanciando el driver JDBC.");
 			e.printStackTrace();
@@ -63,7 +63,7 @@ public class Database {
 	/** 
 	 * Sólo pueden llamarlo clases de este paquete  
 	 */
-	protected static Connection dbConnection() {
+	public static Connection dbConnection() {
 		Connection conn = null;
 		try {
 			conn = Database.getConnection();
