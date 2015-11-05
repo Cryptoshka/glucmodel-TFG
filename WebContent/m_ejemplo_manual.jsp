@@ -21,7 +21,7 @@
             <!-- ## Columna foto -->
             <!-- $$ Columna datos 1 -->
             <div class="col-sm-4">
-            	<jsp:useBean id="fichaPaciente" scope="request" class="beans.InfoBasicaPaciente" />
+            	<jsp:useBean id="fichaPaciente" scope="request" class="business.pojos.beans_viejos.InfoBasicaPaciente" />
                 <ul>
                     <li>Nombre: <%= fichaPaciente.getNomApell() %></li>
                     <li>Peso: <%= fichaPaciente.getPeso() %></li>
