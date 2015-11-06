@@ -1,0 +1,32 @@
+[
+   {
+      "date": "2015-02-03T10:18:05",
+      "length": 35,
+      "intensity": 7
+   },
+   {
+      "date": "2015-04-03T10:18:05",
+      "length": 43,
+      "intensity": 8
+   },
+   {
+      "date": "2015-06-03T10:18:05",
+      "length": 35,
+      "intensity": 9
+   },
+   {
+      "date": "2015-08-03T10:18:05",
+      "length": 20,
+      "intensity": 10
+   },
+   {
+      "date": "2015-10-03T10:18:05",
+      "length": 35,
+      "intensity": 2
+   },
+   {
+      "date": "2015-12-30T10:18:05",
+      "length": 63,
+      "intensity": 5
+   }
+]

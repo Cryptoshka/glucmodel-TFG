@@ -1,0 +1,14 @@
+{
+	"name": "Nombre nuevo",
+	"surname1": "Apellido 1",
+	"surname2": "Apellido 2",
+	"birthdate": "30/12/1994",
+	"dni":"12345678-R",
+	"email":"email@dominio.com",
+	"height": 175,
+	"diabetes_type": "Tipo 1",
+	"gender": "Hombre",
+	"password": "pass",
+	"illnesses": "asma",
+	"medication": "Metaproterenol"
+}

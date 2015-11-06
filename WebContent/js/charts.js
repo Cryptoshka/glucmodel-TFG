@@ -1,57 +1,29 @@
-//$(function() {
-
-    /*function grafica_peso() {
-        $('#grafica-peso').highcharts({
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Fruit Consumption'
-            },
-            xAxis: {
-                categories: ['Apples', 'Bananas', 'Oranges']
-            },
-            yAxis: {
-                title: {
-                    text: 'Fruit eaten'
-                }
-            },
-            series: [{
-                name: 'Jane',
-                data: [1, 0, 4]
-            }, {
-                name: 'John',
-                data: [5, 7, 3]
-            }]
-        });
-    }*/
-//}); 
-
-
-
 function grafica_peso() {
 
-    $('#grafica-peso').highcharts({
-        title: {
+	var opciones = {
+		title: {
             text: 'Peso',
             x: -20 //center
         },
+        subtitle: {
+            text: 'A lo largo del tiempo',
+            x: -20 //center
+        },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        	title: {
+                text: 'Fecha'
+            },
+            type: 'datetime'
         },
         yAxis: {
             title: {
-                text: 'Peso (Kg)'
+                text: 'Peso (en Kg)'
             },
             plotLines: [{
                 value: 0,
                 width: 1,
                 color: '#808080'
             }]
-        },
-        tooltip: {
-            valueSuffix: 'Kg'
         },
         legend: {
             layout: 'vertical',
@@ -61,21 +33,43 @@ function grafica_peso() {
         },
         series: [{
             name: 'Peso',
-            data: [71.0, 70.9, 79.5, 74.5, 78.2, 71.5, 75.2, 76.5, 73.3, 75.3, 73.9, 79.6]
+            data: [{}]
         }]
+	};
+	
+	var url_file = "json_examples/pesos_paciente.json";
+	var url_server = "http://localhost:8080/glucmodel/api/doctor/peso/123";
+	$.getJSON(url_server, function(data) {
+
+		var datos = data;
+		
+		// Los proceso:
+		for (var i in datos) {
+			datos[i][0] = Date.parse(datos[i][0]);
+		}
+		
+        opciones.series[0].data = datos;
+        $('#grafica-peso').highcharts(opciones);
     });
+	
 }
 
-/* Muestra las glucemias en un mismo día, a lo largo del día */
-function glucemias_dia() {
-    $('#grafica-glucemias').highcharts({
-        title: {
-            text: 'Glucemias a lo largo del día',
+function grafica_glucemias() {
+
+	var opciones = {
+		title: {
+            text: 'Glucemias',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'A lo largo del tiempo',
             x: -20 //center
         },
         xAxis: {
-            categories: ['0:00', '2:00', '4:00', '6:00', '8:00', '10:00',
-                '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+        	title: {
+                text: 'Fecha'
+            },
+            type: 'datetime'
         },
         yAxis: {
             title: {
@@ -94,26 +88,49 @@ function glucemias_dia() {
             borderWidth: 0
         },
         series: [{
-            name: 'Glucemias',
-            data: [200, 203, 223, 212, 230, 195, 198, 205, 183, 198, 200, 202]
+            name: 'Glucemia',
+            data: [{}]
         }]
+	};
+	
+	var url_file = "json_examples/glucemias_paciente.json";
+	var url_server = "http://localhost:8080/glucmodel/api/doctor/glucemias/123";
+	
+	$.getJSON(url_server, function(data) {
+
+		var datos = data;
+		
+		// Los proceso:
+		for (var i in datos) {
+			datos[i][0] = Date.parse(datos[i][0]);
+		}
+		
+        opciones.series[0].data = datos;
+        $('#grafica-glucemias').highcharts(opciones);
     });
+	
 }
 
-/* Muestra las glucemias a lo largo de varios días, en el mismo momento del día */
-function glucemias_periodo() {
-    $('#grafica-glucemias').html("");
-    $('#grafica-glucemias').highcharts({
-        title: {
-            text: 'Glucemias a lo largo de varios días',
+function grafica_insulina() {
+
+	var opciones = {
+		title: {
+            text: 'Insulina',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'A lo largo del tiempo',
             x: -20 //center
         },
         xAxis: {
-            categories: ['L', 'M', 'X', 'J', 'V', 'S', 'D']
+        	title: {
+                text: 'Fecha'
+            },
+            type: 'datetime'
         },
         yAxis: {
             title: {
-                text: 'Glucemias'
+                text: 'Insulina'
             },
             plotLines: [{
                 value: 0,
@@ -128,10 +145,27 @@ function glucemias_periodo() {
             borderWidth: 0
         },
         series: [{
-            name: 'Glucemias',
-            data: [200, 203, 223, 212, 230, 195, 198]
+            name: 'Insulina',
+            data: [{}]
         }]
+	};
+	
+	var url_file = "json_examples/insulinas_paciente.json";
+	var url_server = "http://localhost:8080/glucmodel/api/doctor/insulina/123";
+	
+	$.getJSON(url_server, function(data) {
+
+		var datos = data;
+		
+		// Los proceso:
+		for (var i in datos) {
+			datos[i][0] = Date.parse(datos[i][0]);
+		}
+		
+        opciones.series[0].data = datos;
+        $('#grafica-insulina').highcharts(opciones);
     });
+	
 }
 
 function grafica_ejercicio() {
