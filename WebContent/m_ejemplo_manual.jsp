@@ -21,13 +21,12 @@
             <!-- ## Columna foto -->
             <!-- $$ Columna datos 1 -->
             <div class="col-sm-4">
-            	<jsp:useBean id="fichaPaciente" scope="request" class="business.pojos.beans_viejos.InfoBasicaPaciente" />
+            	<jsp:useBean id="fichaPaciente" scope="request" class="beans.Pacientes" />
                 <ul>
-                    <li>Nombre: <%= fichaPaciente.getNomApell() %></li>
-                    <li>Peso: <%= fichaPaciente.getPeso() %></li>
-                    <li>Altura: <%= fichaPaciente.getAltura() %></li>
-                    <li>IMC: <%= fichaPaciente.getImc() %></li>
-					<li>Tipo de diabetes: <%= fichaPaciente.getTipoDiabetes() %></li>
+                    <li>Nombre: <%= fichaPaciente.getName() %></li>
+                    <li>Peso: <%= fichaPaciente.getWeight() %></li>
+                    <li>Altura: <%= fichaPaciente.getHeight() %></li>
+					<li>Tipo de diabetes: <%= fichaPaciente.getDiabetesType() %></li>
                 </ul>
             </div>
             <!-- ## Columna datos 1 -->

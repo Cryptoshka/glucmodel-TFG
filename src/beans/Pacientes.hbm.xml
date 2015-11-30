@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 26, 2015 5:02:26 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="beans.Pacientes" table="PACIENTES">
+        <id name="idPacientes" type="java.lang.Integer">
+            <column name="IDPACIENTES" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="surname1" type="java.lang.String">
+            <column name="SURNAME1" />
+        </property>
+        <property name="surname2" type="java.lang.String">
+            <column name="SURNAME2" />
+        </property>
+        <property name="birthdate" type="java.util.Date">
+            <column name="BIRTHDATE" />
+        </property>
+        <property name="dni" type="java.lang.String">
+            <column name="DNI" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="height" type="java.lang.Integer">
+            <column name="HEIGHT" />
+        </property>
+        <property name="weight" type="java.lang.Double">
+            <column name="WEIGHT" />
+        </property>
+        <property name="imc" type="java.lang.Double">
+            <column name="IMC" />
+        </property>
+        <property name="diabetesType" type="java.lang.String">
+            <column name="DIABETESTYPE" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="illnesses" type="java.lang.String">
+            <column name="ILLNESSES" />
+        </property>
+        <property name="medication" type="java.lang.String">
+            <column name="MEDICATION" />
+        </property>
+        <property name="idDoctor" type="java.lang.Integer">
+            <column name="IDDOCTOR" />
+        </property>
+    </class>
+</hibernate-mapping>
